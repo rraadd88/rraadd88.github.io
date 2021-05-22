@@ -1,0 +1,96 @@
+index,feature,importances
+52,Mutant amino acid's pKa COOH,0.0248103032028
+82,Reference amino acid's logP,0.0225898165095
+57,Mutant amino acid's pKa maximum,0.0218774914577
+54,Mutant amino acid's Composition in the UniProtKB Swiss-Prot data bank,0.0216896979719
+56,Mutant amino acid's pKa minimum,0.020219181346
+58,Mutant amino acid's pI,0.0188196013981
+55,Mutant amino acid's Molecular weight (Da),0.0184347931493
+53,Mutant amino acid's Solubility in g per 100 mL H2O at 25C,0.018328604423
+63,Mutant amino acid's Percentage Of Polar Surface Area,0.0181700247233
+30,Y coordinates of CA atom,0.017839436554
+59,Mutant amino acid's logP,0.0177627237396
+35,Distance from Ligand: MET (ATOM: O),0.017032580991
+65,Mutant amino acid's Molecular Refractivity,0.0167710513605
+29,X coordinates of CA atom,0.0167512390874
+86,Reference amino acid's Percentage Of Polar Surface Area,0.0166400026223
+34,Distance from Ligand: MET (ATOM: C),0.0165391434216
+61,Mutant amino acid's Polar Surface Area,0.0154077206138
+2,Conservation score (ConSurf),0.0153890243972
+27,phi torsion angle,0.01514996813
+33,Distance from Ligand: MET (ATOM: CA),0.0147875716543
+62,Mutant amino acid's Solvent Accessible Surface Area,0.0147278206527
+60,Mutant amino acid's Molecular Polarizability,0.0146060459119
+24,cosine of the angle between C=O of residue and C=O of previous residue,0.0145146808636
+26,alpha torsion/dihedral angle,0.0144696073299
+84,Reference amino acid's Polar Surface Area,0.0142630332482
+31,Z coordinates of CA atom,0.0141953413024
+51,Mutant amino acid's pKa NH2,0.0141712343592
+36,Distance from Ligand: MET (ATOM: CB),0.0140751202128
+0,Mutant amino acid,0.0140458295836
+38,Distance from Ligand: MET (ATOM: SD),0.0140373049285
+32,Distance from Ligand: MET (ATOM: N),0.0135392233567
+25,kappa bond/bend angle,0.0134256946479
+39,Distance from Ligand: MET (ATOM: CE),0.0134236103909
+28,psi torsion angle,0.013264318465
+37,Distance from Ligand: MET (ATOM: CG),0.0131878573092
+6,Sum of positive contributors (PopMusic),0.0131075731417
+19,Energy (kcal/mol) for this O-->H-N H-bond (1),0.0130343328389
+4,Average $\Delta\Delta G$ per sequence position (PopMusic),0.0129637568957
+78,Reference amino acid's Molecular weight (Da),0.0129427240381
+15,Solvent accessibility,0.012165591178
+85,Reference amino acid's Solvent Accessible Surface Area,0.0116354373734
+1,Reference amino acid,0.0115696120591
+88,Reference amino acid's Molecular Refractivity,0.0114385038547
+79,Reference amino acid's pKa minimum,0.0113941635887
+48,Distance from Ligand: GLU (ATOM: OE2),0.0111800162982
+18,Offset from residue to the partner in O-->H-N H-bond (1),0.0110974575365
+42,Distance from Ligand: GLU (ATOM: C),0.011067309336
+83,Reference amino acid's Molecular Polarizability,0.0110624068452
+47,Distance from Ligand: GLU (ATOM: OE1),0.011018543678
+75,Reference amino acid's pKa COOH,0.0108579217503
+40,Distance from Ligand: GLU (ATOM: N),0.0107400914306
+17,Energy (kcal/mol) for this N-H-->O H-bond (1),0.0106310385257
+46,Distance from Ligand: GLU (ATOM: CD),0.0103809083042
+43,Distance from Ligand: GLU (ATOM: O),0.0103244331054
+3,Solvent accessibility (PopMusic),0.0103021145249
+64,Mutant amino acid's Huckel Analysis pi Energy,0.0102691321226
+80,Reference amino acid's pKa maximum,0.0102119362667
+41,Distance from Ligand: GLU (ATOM: CA),0.0101526285699
+44,Distance from Ligand: GLU (ATOM: CB),0.01008542883
+12,First residue of beta bridge,0.00995881236858
+45,Distance from Ligand: GLU (ATOM: CG),0.00987596645459
+20,Offset from residue to the partner in N-H-->O H-bond (2),0.00978946370889
+76,Reference amino acid's Solubility in g per 100 mL H2O at 25C,0.00934886353272
+16,Offset from residue to the partner in N-H-->O H-bond (1),0.00927566257846
+81,Reference amino acid's pI,0.0090648760404
+77,Reference amino acid's Composition in the UniProtKB Swiss-Prot data bank,0.00893955384938
+5,Sum of negative contributors (PopMusic),0.00855809739671
+8,Helix formation in helix types 3 4 and 5,0.00761270984444
+74,Reference amino acid's pKa NH2,0.00760537830312
+22,Offset from residue to the partner in O-->H-N H-bond (2),0.00751283413435
+21,Energy (kcal/mol) for this N-H-->O H-bond (2),0.00722689646269
+7,Secondary structure,0.00680226611658
+69,Mutant amino acid's Lead Likeness,0.00590215970162
+49,Mutant amino acid's Hydropathy,0.00531728046392
+87,Reference amino acid's Huckel Analysis pi Energy,0.00509429440805
+23,Energy (kcal/mol) for this O-->H-N H-bond (2),0.00442185213109
+92,Reference amino acid's Lead Likeness,0.00440692537417
+50,Mutant amino acid's Charge,0.00385866108648
+72,Reference amino acid's Hydropathy,0.00288028467042
+73,Reference amino acid's Charge,0.00238819472423
+11,beta bridge labels,0.00222966746388
+9,bend,0.00179034894079
+10,Chirality,0.00152397311976
+14,Sheet of beta bridge,0.00134474512251
+93,Reference amino acid's Muegge Filter,0.00125872630779
+13,Second residue of beta bridge,0.000929968270879
+70,Mutant amino acid's Muegge Filter,0.000491776015112
+71,Mutant amino acid's Veber Filter,0.0
+68,Mutant amino acid's Ghose Filter,0.0
+67,Mutant amino acid's Bioavailability,0.0
+66,Mutant amino acid's Lipinskis Rule Of Five,0.0
+89,Reference amino acid's Lipinskis Rule Of Five,0.0
+90,Reference amino acid's Bioavailability,0.0
+91,Reference amino acid's Ghose Filter,0.0
+94,Reference amino acid's Veber Filter,0.0

@@ -1,0 +1,554 @@
+/*************************************
+SETUP / MOCK SITE GLOBALS
+*************************************/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+body {
+  /*color: dimgray;*/
+  /*background-color: #fff;*/
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .headline {
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 10px 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px 10px;
+  }
+}
+
+.friends-intro {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .friends-intro {
+    width: 50%;
+  }
+}
+
+/*************************************
+COMPONENT: FILTERED GRID
+*************************************/
+.gsf-filtered-grid {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gsf-filtered-grid > li {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+.gsf-filtered-grid .gsf-filtered-grid-move {
+  -webkit-transition: -webkit-transform 0.4s 0.1s;
+  transition: -webkit-transform 0.4s 0.1s;
+  transition: transform 0.4s 0.1s;
+  transition: transform 0.4s 0.1s, -webkit-transform 0.4s 0.1s;
+}
+
+.gsf-filtered-grid .gsf-filtered-grid-enter,
+.gsf-filtered-grid .gsf-filtered-grid-leave-to {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 120px, 0);
+          transform: translate3d(0, 120px, 0);
+}
+
+.gsf-filtered-grid .gsf-filtered-grid-leave-active {
+  position: absolute;
+}
+
+@media (min-width: 768px) {
+  .gsf-filtered-grid {
+    width: 66.66%;
+    z-index: 5;
+    float: left;
+  }
+}
+
+/*************************************
+COMPONENT: FILTER LIST
+*************************************/
+.gsf-filters {
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  z-index: 50;
+  bottom: calc(-50vh + 59px);
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  padding: 0;
+  background-color: #ffffff;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.gsf-mobile-filters-drawer {
+  cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  height: 60px;
+  -webkit-box-flex: 0;
+          flex: 0 0 60px;
+  width: 100%;
+  padding: 0 25px;
+  border-top: 1px solid rgba(0,0,0,0.30);
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.gsf-mobile-filters-open {
+  -webkit-transform: translate3d(0, -100%, 0) translate3d(0, 59px, 0);
+          transform: translate3d(0, -100%, 0) translate3d(0, 59px, 0);
+}
+
+.gsf-mobile-filters-open .gsf-mobile-filters-drawer {
+  border-top: none;
+}
+
+.gsf-mobile-filters-open .gsf-mobile-filters-drawer:after {
+  content: '';
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  width: calc(100% - 50px);
+  border-bottom: 1px solid rgba(0,0,0,0.30);
+}
+
+.gsf-mobile-filters-heading {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 16px;
+  color: rgba(0,0,0,0.30);
+}
+
+.gsf-mobile-filters-selected {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.30);
+}
+
+.gsf-filter-list-wrap {
+  -webkit-box-flex: 1;
+          flex: 1 1 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.gsf-filter-list {
+  display: block;
+  list-style: none;
+  margin: -0.65rem 0 0;
+  font-size: 16px;
+  padding: 40px 43px 10px;
+}
+
+.gsf-filter-list li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+}
+
+.gsf-filter-list a {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 500;
+  cursor: pointer;
+  color: black;
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.gsf-filter-list a span {
+  position: relative;
+  display: inline-block;
+}
+
+.gsf-filter-list .gsf-filter-active {
+  font-weight: 600;
+  color: #0000CD;
+}
+
+@media (min-width: 768px) {
+  .gsf-filters {
+    position: relative;
+    display: block;
+    z-index: initial;
+    left: initial;
+    bottom: initial;
+    float: left;
+    width: 33.33%;
+    height: auto;
+    padding: 0 20px 110px;
+    background: transparent;
+  }
+
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    .gsf-filters {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 150px;
+    }
+  }
+
+  .gsf-mobile-filters-drawer {
+    display: none;
+  }
+
+  .gsf-mobile-filters-open {
+    -webkit-transform: none;
+            transform: none;
+  }
+  a:hover {
+    color: #0000CD;
+  }
+
+
+/*  a:link, a:visited, a:active, a:hover {*/
+/*    color: #282a2b;*/
+/*    -webkit-transition: all ease-in-out 0.3s;*/
+/*    -moz-transition: all ease-in-out 0.3s;*/
+/*    -o-transition: all ease-in-out 0.3s;*/
+/*    transition: all ease-in-out 0.3s;*/
+/*    text-decoration: none;*/
+/*}*/
+
+}
+
+/*************************************
+COMPONENT: FRIEND CARD
+*************************************/
+.gsf-friend-card {
+  display: block;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 48.5%;
+  height: auto;
+  margin: 0 0 60px;
+  padding: 0;
+}
+
+.gsf-friend-img-wrapper {
+  position: relative;
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.15s ease;
+  transition: -webkit-transform 0.15s ease;
+  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+.gsf-friend-img-wrapper:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(45deg, #fdfdfd, #f7f7f7);
+}
+
+.gsf-friend-img-wrapper:after {
+  content: '';
+  position: absolute;
+  top: calc(10% + 20px);
+  left: calc(10% + 20px);
+  z-index: -5;
+  height: calc(80% - 40px);
+  width: calc(80% - 40px);
+  opacity: 0;
+  -webkit-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+  box-shadow: 0 2px 64px 10px rgba(0, 0, 0, 0.70);
+}
+
+.gsf-friend-static {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.gsf-friend-animated {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+}
+
+.gsf-friend-card-text-wrapper {
+  position: relative;
+  text-align: left;
+  color: black;
+}
+
+.gsf-friend-full-name {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 500;
+  /*text-transform: uppercase;*/
+  color: black;
+  box-shadow: 0 0 0 0px  rgba(255,255,255,0.85); /* Tune line "padding" here */
+  background-color: rgba(255,255,255,0.85);
+  line-height: 1; /* Tune line "margin" here */
+  letter-spacing: 0.05em;
+}
+
+.gsf-friend-job-title {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0 0 0 0px  rgba(255,255,255,0.85); /* Tune line "padding" here */
+  background-color: rgba(255,255,255,0.85);
+  line-height: 1; /* Tune line "margin" here */
+  letter-spacing: 0.1em;
+  color: black;
+  /*text-transform: uppercase;*/
+  margin: 5px 0 0;
+}
+
+.gsf-friend-card-text-textbox {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  right: 16px;
+  z-index:2;
+}
+
+.gsf-friend-details{
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0 0 0 0px rgba(240,240,240,0.5); /* Tune line "padding" here */
+  background-color: rgba(240,240,240,0.5);
+  line-height: 1; /* Tune line "margin" here */
+  letter-spacing: 0.1em;
+  color: black;
+  /*text-transform: uppercase;*/
+  margin: 5px 0 0;
+  display: none;
+}
+
+.gsf-friend-card-text-textbox:hover .gsf-friend-details{
+display : block;
+}
+
+.gsf-friend-card:hover .gsf-friend-static {
+  opacity: 0;
+}
+
+.gsf-friend-card:hover .gsf-friend-img-wrapper {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+}
+
+.gsf-friend-card:hover .gsf-friend-img-wrapper:after {
+  opacity: 1;
+}
+
+@media(min-width: 700px) {
+  .gsf-friend-img-wrapper:after {
+    box-shadow: 0 10px 90px 20px rgba(0, 0, 0, 0.7);
+  }
+}
+
+@media (min-width: 768px) {
+  .gsf-friend-card-text {
+    font-size: 16px;
+  }
+}
+
+/*************************************
+MAIN
+*************************************/
+.friends-gallery {
+  padding-top: 10px;
+}
+
+.friends-gallery:after,
+.friends-gallery:before {
+  content: " ";
+  display: table;
+}
+
+.friends-gallery:after {
+  clear: both;
+}
+
+.friends-gallery .friends-search {
+  width: 100%;
+  height: 100px;
+}
+
+.friends-gallery .friends-input-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 45px;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.friends-gallery .friends-input-wrapper input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.friends-gallery .friends-input-wrapper input::-webkit-input-placeholder {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.friends-gallery .friends-input-wrapper input::-moz-placeholder {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.friends-gallery .friends-input-wrapper input:-ms-input-placeholder {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.friends-gallery .friends-input-wrapper input::-ms-input-placeholder {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.friends-gallery .friends-input-wrapper input::placeholder {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.friends-gallery .friends-input-wrapper .friends-input-status {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 3px;
+  width: 100%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: #b3b3b3;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scale3d(0, 1, 1);
+          transform: scale3d(0, 1, 1);
+}
+
+.friends-gallery .friends-input-wrapper input:focus {
+  outline: none;
+}
+
+.friends-gallery .friends-input-wrapper input:focus ~ .friends-input-status {
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+}
+
+.friends-gallery .friends-main {
+  position: relative;
+  width: 100%;
+}
+
+.friends-gallery .friends-main:after,
+.friends-gallery .friends-main:before {
+  content: " ";
+  display: table;
+}
+
+.friends-gallery .friends-main:after {
+  clear: both;
+}
+
+@media (min-width: 768px) {
+  .friends-gallery .friends-input-wrapper {
+    float: right;
+    width: 32.3%;
+  }
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &mdash; dms2dfe 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.6/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="dms2dfe 1.0.0 documentation" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          dms2dfe</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../1installation.html">Installation</a></li>
+                <li><a href="../../2usage.html">Usage</a></li>
+                <li><a href="../../6test.html">Example</a></li>
+                <li><a href="../../4io.html">I/O</a></li>
+                <li><a href="../../3programs.html">Programs</a></li>
+                <li><a href="../../1installation_deps.html">Dependencies</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../1installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3programs.html">Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4io.html">I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../6test.html">Example Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../5api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1installation_deps.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../7troubleshoot.html">Troubleshoot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../6test_applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../8future.html">Future releases</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#installation-of-dms2dfe">Installation of <cite>dms2dfe</cite></a></li>
+<li><a class="reference internal" href="#troubleshoot">Troubleshoot</a></li>
+<li><a class="reference internal" href="#citations">Citations</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Required python packages would be auto installed while installing <cite>dms2dfe</cite>. <a class="reference external" href="https://repo.continuum.io/archive/Anaconda2-4.0.0-Linux-x86_64.sh">Anaconda Python Distribution</a> is recommended for installing dependent python packages.</p>
+<p>Especially we recommend installing <cite>pysam</cite> prior installing <cite>dms2dfe</cite>.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>conda install -c bioconda pysam==0.8.4
+</pre></div>
+</div>
+<p><cite>dms2dfe</cite> produces .pdb files with B-factor score equaling to Fitness values of corresponding residues.
+For making visualizations on PDB structures though <cite>dms2dfe</cite> pipeline, <a class="reference external" href="https://www.cgl.ucsf.edu/chimera/cgi-bin/secure/chimera-get.py?file=linux_x86_64/chimera-1.10.2-linux_x86_64.bin">UCSF-Chimera</a> (tested on 1.10.2) is needed to be installed.
+To use <cite>UCSF-Chimera</cite> through python environment, graphics drivers also need to be configured by installing &#8220;mesa-utils&#8221;.</p>
+</div>
+<div class="section" id="installation-of-dms2dfe">
+<h2>Installation of <cite>dms2dfe</cite><a class="headerlink" href="#installation-of-dms2dfe" title="Permalink to this headline">¶</a></h2>
+<p><cite>dms2dfe</cite> can be installed by following commands.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>git clone https://github.com/kc-lab/dms2dfe.git
+cd dms2dfe
+pip install .
+</pre></div>
+</div>
+</div>
+<div class="section" id="troubleshoot">
+<h2>Troubleshoot<a class="headerlink" href="#troubleshoot" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to <a class="reference internal" href="7troubleshoot.html#troubleshoot"><span>Troubleshoot</span></a> page.
+For information about dependencies (which are auto-installed), please refer to <a class="reference internal" href="../../1installation_deps.html#dependencies"><span>Dependencies</span></a>.</p>
+</div>
+<div class="section" id="citations">
+<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>McKinney, W. &amp; Team, P. D. Pandas - Powerful Python Data Analysis Toolkit. Pandas - Powerful Python Data Anal. Toolkit 1625 (2015).</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Heger, A. Pysam. github.com (2009). at &lt;<a class="reference external" href="https://github.com/pysam-developers/pysam">https://github.com/pysam-developers/pysam</a>&gt;</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>Pedregosa, F. et al. Scikit-learn: Machine Learning in Python. … Mach. Learn. … 12, 2825–2830 (2012).</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/v0.1.0_b161005/src/1installation.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, Rohan Dandage.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

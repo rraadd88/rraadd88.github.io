@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Programs &#8212; dms2dfe 1.0.6 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dms2dfe.pipeline.main" href="generated/dms2dfe.pipeline.main.html" />
+    <link rel="prev" title="Usage" href="2usage.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          dms2dfe</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0.6</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="1installation.html">Installation</a></li>
+                <li><a href="2usage.html">Usage</a></li>
+                <li><a href="6test.html">Example</a></li>
+                <li><a href="4io.html">I/O</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4io.html">I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6test.html">Example Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1installation_deps.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7troubleshoot.html">Troubleshoot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6contributors.html">Guidelines for contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8future.html">Future releases</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Programs</a><ul>
+<li><a class="reference internal" href="#front-end-programs-of-dms2dfe">Front-end programs of <cite>dms2dfe</cite></a></li>
+<li><a class="reference internal" href="#step-0-1-demuliplex-fastq-files"><strong>–step 0.1</strong> : Demuliplex <cite>.fastq</cite> files</a></li>
+<li><a class="reference internal" href="#step-0-2-preprocesses-and-aligns-sequencing-files"><strong>–step 0.2</strong> : Preprocesses and aligns sequencing files</a></li>
+<li><a class="reference internal" href="#step-0-3-extracts-molecular-features"><strong>–step 0.3</strong> : Extracts molecular features</a></li>
+<li><a class="reference internal" href="#step-1-variant-calling"><strong>–step 1</strong> : Variant calling</a></li>
+<li><a class="reference internal" href="#step-2-estimation-of-fitness-scores"><strong>–step 2</strong> : Estimation of fitness scores</a><ul>
+<li><a class="reference internal" href="#normalization-of-fold-change-values-with-respect-to-frequencies-of-synonymous-mutations">Normalization of fold change values with respect to frequencies of synonymous mutations</a></li>
+<li><a class="reference internal" href="#normalization-of-fold-change-values-with-respect-to-frequencies-of-wild-type">Normalization of fold change values with respect to frequencies of wild type</a></li>
+<li><a class="reference internal" href="#classification-of-mutants-based-on-fitness-values">Classification of mutants based on fitness values</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#step-3-identifies-important-molecular-features"><strong>–step 3</strong> : Identifies important molecular features</a></li>
+<li><a class="reference internal" href="#step-4-comparisons-across-conditions"><strong>–step 4</strong> : Comparisons across conditions</a></li>
+<li><a class="reference internal" href="#step-5-visualizations"><strong>–step 5</strong> : Visualizations</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="programs">
+<span id="id1"></span><h1>Programs<a class="headerlink" href="#programs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="front-end-programs-of-dms2dfe">
+<h2>Front-end programs of <cite>dms2dfe</cite><a class="headerlink" href="#front-end-programs-of-dms2dfe" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="v0.1.0_b161005/src/2usage.html#dms2dfe.pipeline.main" title="dms2dfe.pipeline.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.pipeline.main</span></code></a>()</td>
+<td>This runs all analysis steps in tandem.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="v0.1.0_b161005/src/generated/dms2dfe.configure.main.html#dms2dfe.configure.main" title="dms2dfe.configure.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.configure.main</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="v0.1.0_b161005/src/generated/dms2dfe.ana0_fastq2dplx.main.html#dms2dfe.ana0_fastq2dplx.main" title="dms2dfe.ana0_fastq2dplx.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.ana0_fastq2dplx.main</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="v0.1.0_b161005/src/generated/dms2dfe.ana0_fastq2sbam.main.html#dms2dfe.ana0_fastq2sbam.main" title="dms2dfe.ana0_fastq2sbam.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.ana0_fastq2sbam.main</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="v0.1.0_b161005/src/generated/dms2dfe.ana0_getfeats.main.html#dms2dfe.ana0_getfeats.main" title="dms2dfe.ana0_getfeats.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.ana0_getfeats.main</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="v0.1.0_b161005/src/generated/dms2dfe.ana1_sam2mutmat.main.html#dms2dfe.ana1_sam2mutmat.main" title="dms2dfe.ana1_sam2mutmat.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.ana1_sam2mutmat.main</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="v0.1.0_b161005/src/generated/dms2dfe.ana2_mutmat2fit.main.html#dms2dfe.ana2_mutmat2fit.main" title="dms2dfe.ana2_mutmat2fit.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.ana2_mutmat2fit.main</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="v0.1.0_b161005/src/generated/dms2dfe.ana4_modeller.main.html#dms2dfe.ana4_modeller.main" title="dms2dfe.ana4_modeller.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.ana4_modeller.main</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="v0.1.0_b161005/src/generated/dms2dfe.ana3_fit2comparison.main.html#dms2dfe.ana3_fit2comparison.main" title="dms2dfe.ana3_fit2comparison.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.ana3_fit2comparison.main</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="v0.1.0_b161005/src/generated/dms2dfe.ana4_plotter.main.html#dms2dfe.ana4_plotter.main" title="dms2dfe.ana4_plotter.main"><code class="xref py py-obj docutils literal"><span class="pre">dms2dfe.ana4_plotter.main</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Parameters:</strong> <strong>prj_dh</strong> - name of project_directory.
+<strong>Parameters:</strong> <strong>test</strong> - switch to debug mode.</p>
+</div>
+<div class="section" id="step-0-1-demuliplex-fastq-files">
+<h2><strong>–step 0.1</strong> : Demuliplex <cite>.fastq</cite> files<a class="headerlink" href="#step-0-1-demuliplex-fastq-files" title="Permalink to this headline">¶</a></h2>
+<p>If barcodes are detected in the configuration (located at <cite>project_directory/cfg/barcodes</cite>), <cite>.fastq</cite> files are demultiplexed accordingly.</p>
+</div>
+<div class="section" id="step-0-2-preprocesses-and-aligns-sequencing-files">
+<h2><strong>–step 0.2</strong> : Preprocesses and aligns sequencing files<a class="headerlink" href="#step-0-2-preprocesses-and-aligns-sequencing-files" title="Permalink to this headline">¶</a></h2>
+<p>The steps and required dependendencies:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Quality filtering        : Trimmomatic.
+Alignment                : bowtie2
+.sam to .bam conversion  : samtools
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-0-3-extracts-molecular-features">
+<h2><strong>–step 0.3</strong> : Extracts molecular features<a class="headerlink" href="#step-0-3-extracts-molecular-features" title="Permalink to this headline">¶</a></h2>
+<p>This optional module extracts following structural features of reference protein.</p>
+<p>The out files are created in prj_dh/data_feats</p>
+<p>The steps and required dependendencies are following.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Secondary structure                      : using DSSP.
+Solvent Accessible Surface Area          : using DSSP.
+Distance of a residue from reference atom: using Bio.PDB
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-1-variant-calling">
+<h2><strong>–step 1</strong> : Variant calling<a class="headerlink" href="#step-1-variant-calling" title="Permalink to this headline">¶</a></h2>
+<p>Alignment files (sorted bam) are used to produce codon level mutation matrix of counts of mutants.</p>
+</div>
+<div class="section" id="step-2-estimation-of-fitness-scores">
+<h2><strong>–step 2</strong> : Estimation of fitness scores<a class="headerlink" href="#step-2-estimation-of-fitness-scores" title="Permalink to this headline">¶</a></h2>
+<p>Since DMS studies are primarily based on competition assays, the preferential enrichment of a particular mutant with respect to other can be best described in terms of fitness changes.
+The fitness could be interpreted into the functional importance at molecular level of the RNA and protein which eventually translate into organismal fitness.
+In <cite>dms2dfe</cite> workflow, Fitness is calculated from a fold change of frequencies of mutants in selected sample with respect to unselected sample.</p>
+<div class="math">
+\[\begin{equation}
+FC_{i} = \log_{2}\left [ \frac{N_{i,sel}}{N_{i,unsel}} \right ]
+\end{equation}\]</div>
+<p>where FC<sub>i</sub> is preferential enrichment (fold change) score, N<sub>i,sel</sub> and N<sub>i,unsel</sub> are frequencies of mutant i<sup>th</sup> in selected and unselected conditions respectively.</p>
+<p>This fold change value is dependent on the seqencing depths of the two samples.
+So to eliminate this factor, following two strategies are implemented in <cite>dms2dfe</cite>.</p>
+<div class="section" id="normalization-of-fold-change-values-with-respect-to-frequencies-of-synonymous-mutations">
+<h3>Normalization of fold change values with respect to frequencies of synonymous mutations<a class="headerlink" href="#normalization-of-fold-change-values-with-respect-to-frequencies-of-synonymous-mutations" title="Permalink to this headline">¶</a></h3>
+<p>With the conventional methods used for generation of mutation libraries such as using degenerate codon NNK or NNS - alongside non-synonymous mutations, a proportion of synonymous mutations are cloned.
+Synonymous mutations can be considered are fairly invariable in terms of their fold change values since they express into the same (wild-type) sequence hence can be used as a normalizing factor.
+In other words, since their functional importance would be conserved and equal to wild type allele, fold changes of synonymous mutations can be used benchmark fitness of wild type.
+From detected synonymous mutations, a maximum likelihood estimate of the gaussian fitted distribution of their fold changes is used as a normalizing factor.
+A Z-score is calculated from the fold changes employing population mean and standard deviation from the normalizing factor as described in Supplementary Material.</p>
+<div class="math">
+\[\begin{equation}\label{eq:solve}
+FC_{i,normalized}=\frac{FC_{i}-\mu_{syn}}{\sigma_{syn}}
+\end{equation}\]</div>
+<p>where FC<sub>i,normalized</sub> is Z-score normalized preferential enrichment (Fold change) of i<sup>th</sup> mutant. mu<sub>syn</sub> and sigma<sub>syn</sub> are a population mean and standard deviation of Gaussian fitted distribution of fold changes of wild type (synonymous) mutants respectively.</p>
+</div>
+<div class="section" id="normalization-of-fold-change-values-with-respect-to-frequencies-of-wild-type">
+<h3>Normalization of fold change values with respect to frequencies of wild type<a class="headerlink" href="#normalization-of-fold-change-values-with-respect-to-frequencies-of-wild-type" title="Permalink to this headline">¶</a></h3>
+<p>Alternatively, normalization can also be carried out with respect to wild type alleles as described by Melnikov et. al. [&#64;Melnikov2014].
+This approach is especially useful in scenarios where synonymous mutants are not generated through the library cloning method used.</p>
+<div class="math">
+\[\begin{equation}
+FC_{i,normalized} = FC_{i} - FC_{i,wild}
+\end{equation}\]</div>
+<p>where FC<sub>i,normalized</sub> and FC<sub>i</sub> are normalized preferential enrichment (Fold change), non-normalized fold change of i<sup>th</sup> mutant.
+FC<sub>i,wild</sub> fold change of wild type amino acids at that position.</p>
+<p>Normalization with respect to synonymous mutations is sensitive to changes in coverage across the length of reference sequence which is especially the case in shot gun sequencing methods eg. tagmentation based library preparations.
+To account for this, the both methods can be used in tandem with synonymous mutation for better normalization.</p>
+<p>Rescaling preferential enrichments with respect to the synonymous mutants</p>
+<hr class="docutils" />
+<p>To reflect the relative fitness with respact to the wild type allele, preferential enrichments are rescaled with respect to preferential enrichments of the wild type allele.</p>
+<div class="math">
+\[\begin{equation}
+F_{i} = FC_{i} - FC_{i,wild}
+\end{equation}\]</div>
+<p>where F<sub>i</sub> and FC<sub>i</sub> are fitness score, preferential enrichment of of $i^{th}$ mutant.
+FC<sub>i</sub> is the fold change of wild type sequences at that position.</p>
+</div>
+<div class="section" id="classification-of-mutants-based-on-fitness-values">
+<h3>Classification of mutants based on fitness values<a class="headerlink" href="#classification-of-mutants-based-on-fitness-values" title="Permalink to this headline">¶</a></h3>
+<p>Since the fitness values are scaled based on wild type alleles, the mutants can be classified as deleterious (if F<sub>i</sub> &lt; 0) and beneficial (if F<sub>i</sub> &gt; 0) as follows,</p>
+<div class="math">
+\[\begin{split}\begin{equation}
+M_{i} \in \left \{\begin{matrix}
+deleterious  &amp; if \  F_i&lt;0 \\
+beneficial  &amp; if \ F_i&gt;0
+\end{matrix}\right.
+\end{equation}\end{split}\]</div>
+<p>where, M<sub>i</sub> is i<sup>th</sup> kind of survived mutant.</p>
+</div>
+</div>
+<div class="section" id="step-3-identifies-important-molecular-features">
+<h2><strong>–step 3</strong> : Identifies important molecular features<a class="headerlink" href="#step-3-identifies-important-molecular-features" title="Permalink to this headline">¶</a></h2>
+<p>Correlative analysis is carried out to identify molecular features that strongly correlate with fitness scores.
+Features extracted in upstream step are utilized here.</p>
+<p>Correlation plots are saved in <cite>project_directory/plots/</cite> directory with a suffix <cite>.corr.pdf</cite>.</p>
+</div>
+<div class="section" id="step-4-comparisons-across-conditions">
+<h2><strong>–step 4</strong> : Comparisons across conditions<a class="headerlink" href="#step-4-comparisons-across-conditions" title="Permalink to this headline">¶</a></h2>
+<p>Based on the categoris of fitness of mutants in test and control experimental conditions, mutants are classified in three categories <cite>positive</cite>, <cite>negative</cite> and <cite>robust</cite>.</p>
+<div class="math">
+\[\begin{split}\begin{equation}
+M_{i,test} \in \left \{\begin{matrix}
+positive &amp; if \ (M_{i,control} \in deleterious \ and \ M_{i,test} \in beneficial)\\
+negative &amp; if \ (M_{i,control} \in beneficial \ and \ M_{i,test} \in deleterious)\\
+robust &amp; else
+\end{matrix}\right.
+\end{equation}\end{split}\]</div>
+<p>where M<sub>i,test</sub> and M<sub>i,control</sub> are i<sup>th</sup> kind of survived mutant in test and control libraries respectively.</p>
+<p>This categorization simplifies the data in terms of overall dynamics of DFEs.</p>
+</div>
+<div class="section" id="step-5-visualizations">
+<h2><strong>–step 5</strong> : Visualizations<a class="headerlink" href="#step-5-visualizations" title="Permalink to this headline">¶</a></h2>
+<p>Visualizations generated by visualization step and respective extentions. These plots are saved in the <cite>project_directory/plot/aas</cite>.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>*. Coverage/depth of sequencing : `.coverage.pdf`
+*. Mutation matrix (heatmap): `.mutmap.pdf`
+*. Substitution matrix (heatmap): `.submap.pdf`
+*. Scatter plot between counts of selected and reference mutants : `.multisca.pdf`
+*. Projections on PDB: `.pdb.png` (`.pdb`)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/3programs.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Rohan Dandage.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

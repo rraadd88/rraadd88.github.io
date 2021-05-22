@@ -1,0 +1,5 @@
+fastq_R1_fh,fastq_R2_fh,barcode_R1,barcode_R2,fastq_fn
+path/to/file_R1.fastq,path/to/file_R2.fastq,ATGC,ATGC,sample1
+path/to/file_R1.fastq,path/to/file_R2.fastq,CGAT,TCGC,sample2
+path/to/file_R1.fastq,path/to/file_R2.fastq,TCGC,CGAT,sample3
+..,..,..,..,..

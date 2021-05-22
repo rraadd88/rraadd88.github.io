@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>I/O &#8212; dms2dfe 1.0.6 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Example Datasets" href="6test.html" />
+    <link rel="prev" title="dms2dfe.ana4_plotter.main" href="generated/dms2dfe.ana4_plotter.main.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          dms2dfe</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0.6</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="1installation.html">Installation</a></li>
+                <li><a href="2usage.html">Usage</a></li>
+                <li><a href="6test.html">Example</a></li>
+                <li><a href="#">I/O</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3programs.html">Programs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6test.html">Example Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1installation_deps.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7troubleshoot.html">Troubleshoot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6contributors.html">Guidelines for contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8future.html">Future releases</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">I/O</a><ul>
+<li><a class="reference internal" href="#inputs-configuration">Inputs (configuration)</a><ul>
+<li><a class="reference internal" href="#info">info</a></li>
+<li><a class="reference internal" href="#lbls">lbls</a></li>
+<li><a class="reference internal" href="#fit">fit</a></li>
+<li><a class="reference internal" href="#comparison">comparison</a></li>
+<li><a class="reference internal" href="#repli">repli</a></li>
+<li><a class="reference internal" href="#feats">feats</a></li>
+<li><a class="reference internal" href="#barcodes">barcodes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#outputs-plots">Outputs (plots)</a></li>
+<li><a class="reference internal" href="#outputs-data">Outputs (data)</a><ul>
+<li><a class="reference internal" href="#data-fit-metrics">data_fit_metrics</a></li>
+<li><a class="reference internal" href="#data-lbl">data_lbl</a></li>
+<li><a class="reference internal" href="#data-fit">data_fit</a></li>
+<li><a class="reference internal" href="#data-comparison">data_comparison</a></li>
+<li><a class="reference internal" href="#data-feats">data_feats</a></li>
+<li><a class="reference internal" href="#data-mutmat">data_mutmat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="i-o">
+<span id="io"></span><h1>I/O<a class="headerlink" href="#i-o" title="Permalink to this headline">¶</a></h1>
+<p>Details about inputs and outputs of <a class="reference internal" href="v0.1.0_b161005/src/index.html#dms2dfe"><span class="std std-ref">dms2dfe</span></a>.</p>
+<div class="section" id="inputs-configuration">
+<h2>Inputs (configuration)<a class="headerlink" href="#inputs-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Inputs of dms2dfe are located in <cite>project_directory/cfg/</cite>.
+They are .csv files. Namely</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- cfg             : configuration directory
+|   |-- info        : csv file with variables for a particular analysis eg. number of cores, host organism etc.
+|   |-- lbls        : csv file with samples names and corresponding paths to input files (.fastq, .sam, .bam or .mut_cds).
+|   |-- fit         : csv file with pairs of input (before selection) and selected (after selection) samples.
+|   |-- comparison  : csv file with pairs of control (eg. untreated) and test (eg. treated) samples to be compared.
+|   |-- repli       : csv file with replicates to be averaged.
+|   |-- feats       : csv file with custom features.
+|   `-- barcodes    : csv file with information about deplexing barcoded .fastq files.
+</pre></div>
+</div>
+<div class="section" id="info">
+<h3>info<a class="headerlink" href="#info" title="Permalink to this headline">¶</a></h3>
+<p>This csv file includes the variables for a particular analysis.
+Format:</p>
+<table border="1" class="docutils" id="id17">
+<caption><span class="caption-text"><cite>cfg/info</cite></span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">description</th>
+<th class="head">varname</th>
+<th class="head">options</th>
+<th class="head">input</th>
+<th class="head">default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">Host name for assigning codon table</th>
+<td>host</td>
+<td>[coli | yeast | sapiens]</td>
+<td>&#160;</td>
+<td>coli</td>
+</tr>
+<tr class="row-odd"><th class="stub">Lower cut off for frequency per mutant</th>
+<td>Ni_cutoff</td>
+<td>&#160;</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><th class="stub">Lower cut off for Phred score quality</th>
+<td>Q_cutoff</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>30</td>
+</tr>
+<tr class="row-odd"><th class="stub">Type of transformation of frequecies of mutants</th>
+<td>transform_type</td>
+<td>[log: log2  |  plog: log2 with pseudocount | rlog: regularised log2 (needs deseq)| vst: variance stabilizing transformation (needs DESeq2)]</td>
+<td>log</td>
+<td>log</td>
+</tr>
+<tr class="row-even"><th class="stub">Type of normalization of fold changes</th>
+<td>norm_type</td>
+<td>[GLM: by generalized linear modelling (needs DESeq2) | none : use raw fold changes | MLE: wrt MLE of synonymous mutations ]</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr class="row-odd"><th class="stub">Alignment type</th>
+<td>alignment_type</td>
+<td>[loc:local | glob:global]</td>
+<td>&#160;</td>
+<td>loc</td>
+</tr>
+<tr class="row-even"><th class="stub">Number of cores to be used</th>
+<td>cores</td>
+<td>&#160;</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><th class="stub">Whether input data is of single mutation or double mutations</th>
+<td>mut_type</td>
+<td>[single: double]</td>
+<td>&#160;</td>
+<td>single</td>
+</tr>
+<tr class="row-even"><th class="stub">Whether to use Preferential enrichments or Fitness scores for identification of molecular constraints</th>
+<td>ml_input</td>
+<td>[FC: Preferential enrichments| Fi: Fitness scores ]</td>
+<td>&#160;</td>
+<td>FC</td>
+</tr>
+<tr class="row-odd"><th class="stub">Optional: Clip upstream UPTO and downstream FROM codons (space delimited) rg. 10&lt;SPACE&gt;167</th>
+<td>clips</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Optional: Path to reference fasta file</th>
+<td>fsta_fh</td>
+<td>&#160;</td>
+<td>Firnberg_et_al_2014/btem.fasta</td>
+<td>found in project directory</td>
+</tr>
+<tr class="row-odd"><th class="stub">Optional: Path to pdb file</th>
+<td>pdb_fh</td>
+<td>&#160;</td>
+<td>Firnberg_et_al_2014/btem.pdb</td>
+<td>found in project directory</td>
+</tr>
+<tr class="row-even"><th class="stub">Optional: residue numbers of active sites (space delimited) eg. 68&lt;SPACE&gt;192</th>
+<td>active_sites</td>
+<td>&#160;</td>
+<td>68 166</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Optional: if reference sequence is concatamer (space delimited) eg. 1&lt;SPACE&gt;265&lt;SPACE&gt;268&lt;SPACE&gt;532</th>
+<td>cctmr</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Optional: additional commands to pass to trmmomatic</th>
+<td>trimmomatic_com</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Optional: additional commands to pass to bowtie2</th>
+<td>bowtie2_com</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Optional: path to dssp module (dependencies)</th>
+<td>dssp_fh</td>
+<td>&#160;</td>
+<td>dms2dfe_dependencies/dssp-2.0.4-linux-amd64</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Optional: path to trimmomatic source (.jar) file (dependencies)</th>
+<td>trimmomatic_fh</td>
+<td>&#160;</td>
+<td>dms2dfe_dependencies/Trimmomatic-0.33/trimmomatic-0.33.jar</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Optional: path to bowtie2 source file</th>
+<td>bowtie2_fh</td>
+<td>&#160;</td>
+<td>dms2dfe_dependencies/bowtie2-2.2.1/bowtie2</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Optional: path to samtools source file</th>
+<td>samtools_fh</td>
+<td>&#160;</td>
+<td>dms2dfe_dependencies/samtools-0.1.18/samtools</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Optional: path to clustal omega source file</th>
+<td>clustalo_fh</td>
+<td>&#160;</td>
+<td>dms2dfe_dependencies/clustalo-1.2.2-Ubuntu-x86_64</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Optional: path to MSMS source file (for calculation of residue depths)</th>
+<td>msms_fh</td>
+<td>&#160;</td>
+<td>dms2dfe_dependencies/msms/msms.x86_64Linux2.2.6.1</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Optional: path to rate4site source file (for calculation of conservation scores)</th>
+<td>rate4site_fh</td>
+<td>&#160;</td>
+<td>dms2dfe_dependencies/rate4site/rate4site-3.0.0/src/rate4site/rate4site</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Optional: path to Rscript (for use of Deseq2) can be identified by executing command ‘which R’</th>
+<td>rscript_fh</td>
+<td>&#160;</td>
+<td>/usr/bin/Rscript</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Columns:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- cfg
+|   |-- info
+|   |   |-- column varname          : names of input variables
+|   |   |-- column input            : inputs values
+|   |   |-- column default          : default values
+|   |   `-- column description      : details of values
+</pre></div>
+</div>
+<p><cite>info</cite> can be edited in multiple ways as describes in <a class="reference internal" href="v0.1.0_b161005/src/2usage.html#usage"><span class="std std-ref">Usage</span></a>.</p>
+</div>
+<div class="section" id="lbls">
+<h3>lbls<a class="headerlink" href="#lbls" title="Permalink to this headline">¶</a></h3>
+<p>This is a csv file with samples names and corresponding paths to input files (.fastq, .sam, .bam or .mut_cds).
+Format:</p>
+<table border="1" class="docutils" id="id18">
+<caption><span class="caption-text"><cite>cfg/lbls</cite></span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">varname</th>
+<th class="head">fhs_1</th>
+<th class="head">fhs_2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">sample1</th>
+<td>SRRNNNNNN1_R1.fastq</td>
+<td>SRRNNNNNN1_R2.fastq</td>
+</tr>
+<tr class="row-odd"><th class="stub">sample2</th>
+<td>SRRNNNNNN2_R1.fastq</td>
+<td>SRRNNNNNN2_R2.fastq</td>
+</tr>
+<tr class="row-even"><th class="stub">sample3</th>
+<td>SRRNNNNNN3_R1.fastq</td>
+<td>SRRNNNNNN3_R2.fastq</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Columns:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- cfg
+|   |-- lbls                        : samples names and corresponding paths to sequqnce files (.fastq or .bam).
+|   |   |-- column  varname         : sample names,
+|   |   |-- column  fhs_1           : paths to input files (.fastq or .sam or .bam or .mut_cds)
+|   |   `-- column  fhs_2           : paths to reverse (R2) of pair ended .fastq files.
+</pre></div>
+</div>
+</div>
+<div class="section" id="fit">
+<h3>fit<a class="headerlink" href="#fit" title="Permalink to this headline">¶</a></h3>
+<p>This is a csv file with pairs of input (before selection) and selected (after selection) samples.
+Format:</p>
+<table border="1" class="docutils" id="id19">
+<caption><span class="caption-text"><cite>cfg/fit</cite></span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">unsel</th>
+<th class="head">sel_1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">input_library</th>
+<td>selected_for_activity1</td>
+</tr>
+<tr class="row-odd"><th class="stub">input_library</th>
+<td>selected_for_activity2</td>
+</tr>
+<tr class="row-even"><th class="stub">input_library</th>
+<td>selected_for_activity3</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Columns:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- cfg
+|   |-- fit                         : pairs of input (before selection) and selected (after selection) samples.
+|   |   |-- column  unsel           : sample names of input (unselected) condition,
+|   |   `-- columns sel_1,sel_2,..  : sample names of selected condition
+</pre></div>
+</div>
+</div>
+<div class="section" id="comparison">
+<h3>comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">¶</a></h3>
+<p>This is a csv file with pairs of control (eg. untreated) and test (eg. treated) samples to be compared.
+Format:</p>
+<table border="1" class="docutils" id="id20">
+<caption><span class="caption-text"><cite>cfg/comparison</cite></span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">ctrl</th>
+<th class="head">test_1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">no_treatment</th>
+<td>treatment_chem1</td>
+</tr>
+<tr class="row-odd"><th class="stub">no_treatment</th>
+<td>treatment_chem2</td>
+</tr>
+<tr class="row-even"><th class="stub">no_treatment</th>
+<td>treatment_chem3</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Columns:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- cfg
+|   |-- comparison                  : pairs of control (eg. untreated) and test (eg. treated) samples to be compared.
+|   |   |-- column  ctrl            : sample names of control condition,
+|   |   `-- columns test_1,test_2,..: sample names of test condition
+</pre></div>
+</div>
+</div>
+<div class="section" id="repli">
+<h3>repli<a class="headerlink" href="#repli" title="Permalink to this headline">¶</a></h3>
+<p>This is a csv file with replicates to be averaged.
+Format:</p>
+<table border="1" class="docutils" id="id21">
+<caption><span class="caption-text"><cite>cfg/repli</cite></span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">varname</th>
+<th class="head">replicate_1</th>
+<th class="head">replicate_2</th>
+<th class="head">replicate_3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">sample1</th>
+<td>sample1_replicate1</td>
+<td>sample1_replicate2</td>
+<td>sample1_replicate3</td>
+</tr>
+<tr class="row-odd"><th class="stub">sample2</th>
+<td>sample2_replicate1</td>
+<td>sample2_replicate2</td>
+<td>sample3_replicate3</td>
+</tr>
+<tr class="row-even"><th class="stub">sample3</th>
+<td>sample3_replicate1</td>
+<td>sample3_replicate2</td>
+<td>sample3_replicate3</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Columns:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- cfg
+|   |-- repli                       : replicates to be averaged.
+|   |   |-- column  varname         : sample names of averages
+|   |   `-- columns replicate_1,replicate_2,.. : sample names of replicates
+</pre></div>
+</div>
+</div>
+<div class="section" id="feats">
+<h3>feats<a class="headerlink" href="#feats" title="Permalink to this headline">¶</a></h3>
+<p>This is a csv file with custom features.
+Format:</p>
+<table border="1" class="docutils" id="id22">
+<caption><span class="caption-text"><cite>cfg/feats</cite></span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">aasi (residue number)</th>
+<th class="head">Conservation score</th>
+<th class="head">Stability</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">1</th>
+<td>0.25</td>
+<td>0.3</td>
+</tr>
+<tr class="row-odd"><th class="stub">2</th>
+<td>0.67</td>
+<td>0.5</td>
+</tr>
+<tr class="row-even"><th class="stub">3</th>
+<td>0.78</td>
+<td>0.64</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Columns:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- cfg
+|   |-- feats                       : custom features.
+|   |   |-- column  aasi            : amino acid number,
+|   |   `-- columns feat_1,feat_2,..: features (eg. conservation score).
+</pre></div>
+</div>
+</div>
+<div class="section" id="barcodes">
+<h3>barcodes<a class="headerlink" href="#barcodes" title="Permalink to this headline">¶</a></h3>
+<p>This is a csv file with information about deplexing barcoded .fastq files.
+Format:</p>
+<table border="1" class="docutils" id="id23">
+<caption><span class="caption-text"><cite>cfg/barcodes</cite></span><a class="headerlink" href="#id23" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">fastq_R1_fh</th>
+<th class="head">fastq_R2_fh</th>
+<th class="head">barcode_R1</th>
+<th class="head">barcode_R2</th>
+<th class="head">fastq_fn</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>path/to/file_R1.fastq</td>
+<td>path/to/file_R2.fastq</td>
+<td>ATGC</td>
+<td>ATGC</td>
+<td>sample1</td>
+</tr>
+<tr class="row-odd"><td>path/to/file_R1.fastq</td>
+<td>path/to/file_R2.fastq</td>
+<td>CGAT</td>
+<td>TCGC</td>
+<td>sample2</td>
+</tr>
+<tr class="row-even"><td>path/to/file_R1.fastq</td>
+<td>path/to/file_R2.fastq</td>
+<td>TCGC</td>
+<td>CGAT</td>
+<td>sample3</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Columns:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- cfg
+|   |-- barcodes                    : information about deplexing barcoded .fastq files.
+|   |   |-- column  fastq_R1_fh     : paths to forward (R1) fastq files,
+|   |   |-- column  fastq_R2_fh     : paths to reverse (R2) fastq files,
+|   |   |-- column  barcode_R1      : sequence of forward (R1) barcode,
+|   |   |-- column  barcode_R2      : sequence of reverse (R2) barcode,
+|   |   `-- column  fastq_fn        : file names of output files.
+</pre></div>
+</div>
+<p>For examples of configuration files, please have a look at test datasets located in <cite>dms2dfe/test_dataset/</cite>.</p>
+</div>
+</div>
+<div class="section" id="outputs-plots">
+<h2>Outputs (plots)<a class="headerlink" href="#outputs-plots" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Coverage (<a href="#id1"><span class="problematic" id="id2">*</span></a>.cov.pdf) : Shows coverage of reads (left yaxis) and mutations (right yaxis).</li>
+<li>Mutation map (<a href="#id3"><span class="problematic" id="id4">*</span></a>.mutmap.pdf) : Shows fitness scores of individual mutants.</li>
+<li>Substitution map (<a href="#id5"><span class="problematic" id="id6">*</span></a>.mutmap.pdf) : Shows fitness scores of substitutions (mean of individual mutations).</li>
+<li>Scatter map (<a href="#id7"><span class="problematic" id="id8">*</span></a>.multisca.pdf) : Shows correlations between mutations (left), substitution-wise averages (center) and position-wise averages (right).</li>
+<li>Violin (<a href="#id9"><span class="problematic" id="id10">*</span></a>.violin.pdf) : Shows comparison of distributions of test and control conditions. p-values are obtained by 2-sided Wilcoxon signed-rank test.</li>
+<li>PDB (<a href="#id11"><span class="problematic" id="id12">*</span></a>.pdb) : B-factor (temperature/flexibility) factor is written with  position-wise averages of fitness scores.</li>
+<li>Correlation matrix (<a href="#id13"><span class="problematic" id="id14">*</span></a>.corr.pdf) : Correlation matrix (Spearman correlation coefficients) between fitness scores (highlighted rows and columns) and molecular features of the mutations.</li>
+</ol>
+</div>
+<div class="section" id="outputs-data">
+<h2>Outputs (data)<a class="headerlink" href="#outputs-data" title="Permalink to this headline">¶</a></h2>
+<p>With a successful run of <cite>dms2dfe</cite> following output files are created.
+Below is structure of output files generated.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- data_lbl        : frequencies of mutants
+|   |-- aas         : amino acid level
+|   `-- cds         : codon level
+|-- data_fit        : fitness of mutants
+|   |-- aas         : amino acid level
+|   `-- cds         : codon level
+|-- data_comparison : comparison of fitness of mutants between test (eg. treated) and control (eg. untreated).
+|   |-- aas         : amino acid level
+|   `-- cds         : codon level
+|-- plots
+|   |-- aas         : amino acid level
+|   `-- cds         : codon level
+|-- data_ml         : data used for generating classification model.
+|-- data_feats: features generated by ana0_getfeats.
+</pre></div>
+</div>
+<p>Also variants would be saves at codon levels in files with extensions .mat_mut_cds and .list_mut_cds, in the same file as sequence files (.fastq, .sam or .bam).</p>
+<div class="section" id="data-fit-metrics">
+<h3>data_fit_metrics<a class="headerlink" href="#data-fit-metrics" title="Permalink to this headline">¶</a></h3>
+<p>Among columns, following variables are reported.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>fn      : file name
+mu      : mean of prefenrential enrichments
+sigma   : standard deviation of prefenrential enrichments
+n       : number of mutants reported (survived)
+ref**   : reference sample replicate **
+sel**   : selected sample replicate **
+F       : Cumulative prefenrential enrichment of the sample
+Delta n : (n of selected) - (n of reference)
+Delta F : (F of selected) - (F of reference)
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-lbl">
+<h3>data_lbl<a class="headerlink" href="#data-lbl" title="Permalink to this headline">¶</a></h3>
+<p>This includes the frequencies of mutations.
+Format:</p>
+<table border="1" class="docutils" id="id24">
+<caption><span class="caption-text"><cite>data_lbl</cite></span><a class="headerlink" href="#id24" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">mutids</th>
+<th class="head">refrefi</th>
+<th class="head">mut</th>
+<th class="head">NiA</th>
+<th class="head">ref</th>
+<th class="head">NiAcut</th>
+<th class="head">NiAcutlog</th>
+<th class="head">NiScutlog</th>
+<th class="head">NiA_norm</th>
+<th class="head">NiA_tran</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">M003A</th>
+<td>M003</td>
+<td>A</td>
+<td>22</td>
+<td>M</td>
+<td>22</td>
+<td>4.4594316186</td>
+<td>&#160;</td>
+<td>22</td>
+<td>4.4594316186</td>
+</tr>
+<tr class="row-odd"><th class="stub">M003C</th>
+<td>M003</td>
+<td>C</td>
+<td>8</td>
+<td>M</td>
+<td>8</td>
+<td>3</td>
+<td>&#160;</td>
+<td>8</td>
+<td>3</td>
+</tr>
+<tr class="row-even"><th class="stub">M003D</th>
+<td>M003</td>
+<td>D</td>
+<td>7</td>
+<td>M</td>
+<td>7</td>
+<td>2.8073549221</td>
+<td>&#160;</td>
+<td>7</td>
+<td>2.8073549221</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Columns:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- data_lbl                                : frequencies of mutants
+|   `-- aas/cds
+|       |-- column  ref                      : Wild-type residue/nucleotide
+|       |-- column  mut                      : Mutated residue/nucleotide
+|       |-- column  mutids                   : ID of mutant &lt;ref&gt;&lt;index&gt;&lt;mut&gt;
+|       |-- columns NiA,NiAcut,NiAcutlog    : raw, thresholded(cut) and log of counts for all(A) mutants
+|       |-- columns NiS,NiScut,NiScutlog    : raw, thresholded(cut) and log of counts for synonymous(S) mutants
+|       |-- columns NiN,NiNcut,NiNcutlog    : raw, thresholded(cut) and log of counts for non-synonymous(N) mutants
+|       `-- columns NiA_norm,NiA_tran       : normalised and transformed frequencies respectively
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-fit">
+<h3>data_fit<a class="headerlink" href="#data-fit" title="Permalink to this headline">¶</a></h3>
+<p>This includes the fitness of mutations.
+Format:</p>
+<table border="1" class="docutils" id="id25">
+<caption><span class="caption-text"><cite>data_fit</cite></span><a class="headerlink" href="#id25" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">mutids</th>
+<th class="head">ref</th>
+<th class="head">refi</th>
+<th class="head">mut</th>
+<th class="head">KKA2_Bkg1.NiA_tran.ref</th>
+<th class="head">KKA2_Bkg2.NiA_tran.ref</th>
+<th class="head">NiA_tran.ref avg</th>
+<th class="head">NiA_tran.ref std</th>
+<th class="head">NiA_tran.ref</th>
+<th class="head">KKA2_S1_Kan11_L1.NiA_tran.sel</th>
+<th class="head">KKA2_S2_Kan11_L2.NiA_tran.sel</th>
+<th class="head">KKA2_S3_Kan11_L1.NiA_tran.sel</th>
+<th class="head">NiA_tran.sel avg</th>
+<th class="head">NiA_tran.sel std</th>
+<th class="head">NiA_tran.sel</th>
+<th class="head">FCA</th>
+<th class="head">FCS</th>
+<th class="head">stat ztest</th>
+<th class="head">pval ztest</th>
+<th class="head">rejectH0 ztest fdr_bh</th>
+<th class="head">padj ztest fdr_bh</th>
+<th class="head">baseMean</th>
+<th class="head">log2FoldChange</th>
+<th class="head">lfcSE</th>
+<th class="head">stat Waldtest</th>
+<th class="head">pval Waldtest</th>
+<th class="head">padj Waldtest fdr_bh</th>
+<th class="head">pval</th>
+<th class="head">stat</th>
+<th class="head">padj</th>
+<th class="head">FCA_norm</th>
+<th class="head">FCS_norm</th>
+<th class="head">refrefi</th>
+<th class="head">FiA</th>
+<th class="head">class_fit</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">V046A</th>
+<td>V</td>
+<td>46</td>
+<td>A</td>
+<td>5.2052155616</td>
+<td>5.0904996588</td>
+<td>5.1478576102</td>
+<td>0.0811163928</td>
+<td>5.1478576102</td>
+<td>6.4296703572</td>
+<td>5.7936088947</td>
+<td>6.3830930946</td>
+<td>6.2021241155</td>
+<td>0.3545502427</td>
+<td>6.2021241155</td>
+<td>1.0542665053</td>
+<td>&#160;</td>
+<td>3.9382099123</td>
+<td>8.20917634057E-05</td>
+<td>True</td>
+<td>0.0001128762</td>
+<td>65.7511932561</td>
+<td>1.7199281289</td>
+<td>0.5870766355</td>
+<td>2.9296484054</td>
+<td>0.0033934573</td>
+<td>0.0072991345</td>
+<td>0.0033934573</td>
+<td>2.9296484054</td>
+<td>0.0072991345</td>
+<td>1.7199281289</td>
+<td>&#160;</td>
+<td>V046</td>
+<td>3.0191968609</td>
+<td>beneficial</td>
+</tr>
+<tr class="row-odd"><th class="stub">G010C</th>
+<td>G</td>
+<td>10</td>
+<td>C</td>
+<td>7.124158393</td>
+<td>6.9652451567</td>
+<td>7.0447017748</td>
+<td>0.112368627</td>
+<td>7.0447017748</td>
+<td>4.1887196481</td>
+<td>3.9257671773</td>
+<td>3.6869535522</td>
+<td>3.9338134592</td>
+<td>0.2509798015</td>
+<td>3.9338134592</td>
+<td>-3.1108883157</td>
+<td>&#160;</td>
+<td>-15.8540728062</td>
+<td>1.31757836813E-56</td>
+<td>True</td>
+<td>8.69601722969E-56</td>
+<td>51.4544663812</td>
+<td>-2.34482997</td>
+<td>0.5496972289</td>
+<td>-4.2656754418</td>
+<td>1.99298329078E-05</td>
+<td>0.0001136</td>
+<td>1.99298329078E-05</td>
+<td>-4.2656754418</td>
+<td>0.0001136</td>
+<td>-2.34482997</td>
+<td>&#160;</td>
+<td>G010</td>
+<td>-1.2322607062</td>
+<td>deleterious</td>
+</tr>
+<tr class="row-even"><th class="stub">A014A</th>
+<td>A</td>
+<td>14</td>
+<td>A</td>
+<td>5.776213721</td>
+<td>5.568019228</td>
+<td>5.6721164745</td>
+<td>0.1472157379</td>
+<td>5.6721164745</td>
+<td>4.6660939086</td>
+<td>3.9141409188</td>
+<td>4.2607257721</td>
+<td>4.2803201999</td>
+<td>0.3763592445</td>
+<td>4.2803201999</td>
+<td>-1.3917962747</td>
+<td>-1.3917962747</td>
+<td>-4.7819154748</td>
+<td>1.73632691184E-06</td>
+<td>True</td>
+<td>2.53054584628E-06</td>
+<td>30.1156142366</td>
+<td>-0.6343510833</td>
+<td>0.500565074</td>
+<td>-1.2672699638</td>
+<td>0.2050587766</td>
+<td>0.2447822045</td>
+<td>0.2050587766</td>
+<td>-1.2672699638</td>
+<td>0.2447822045</td>
+<td>-0.6343510833</td>
+<td>-0.6343510833</td>
+<td>A014</td>
+<td>0</td>
+<td>neutral</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- data_fit                            : fitness of mutants
+|   `-- aas/cds
+|       |-- column  ref                 : Wild-type residue/nucleotide
+|       |-- column  mut                 : Mutated residue/nucleotide
+|       |-- column  mutids              : ID of mutant &lt;ref&gt;&lt;index&gt;&lt;mut&gt;
+|       |-- column  NiA_tran.ref avg    : Average frequencies of mutants from replicates of reference (input/unselected/background) pool
+|       |-- column  NiA_tran.ref std    : standard deviation frequencies of mutants from replicates of reference (input/unselected/background) pool
+|       |-- column  NiA_tran.ref avg    : Average frequencies of mutants from replicates of selected (post-selection) pool
+|       |-- column  NiA_tran.ref std    : standard deviation frequencies of mutants from replicates of selected (post-selection) pool
+|       |-- columns FCA,FCA_norm,FiA    : Preferential enrichments (Fold changes, FC), normalised preferential enrichments and fitness(Fi) of all(A) mutants respectively
+|       |-- columns FCS,FiS             : Fold change(FC) and fitness(Fi) of synonymous(S) mutants
+|       |-- pval, stat, padj            : p-value, statistics of the test and adjusted p-value respectively.
+|       |--
+|       `-- column  class_fit           : class of fitness
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-comparison">
+<h3>data_comparison<a class="headerlink" href="#data-comparison" title="Permalink to this headline">¶</a></h3>
+<p>This includes the comparison of fitness of mutations between test and control conditions.
+Format:</p>
+<table border="1" class="docutils" id="id26">
+<caption><span class="caption-text"><cite>data_comparison</cite></span><a class="headerlink" href="#id26" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">mutids</th>
+<th class="head">mut</th>
+<th class="head">ref</th>
+<th class="head">FiA_test</th>
+<th class="head">class_fit_test</th>
+<th class="head">padj_test</th>
+<th class="head">FiA_ctrl</th>
+<th class="head">class_fit_ctrl</th>
+<th class="head">padj_ctrl</th>
+<th class="head">Fi_ctrl</th>
+<th class="head">Fi_test</th>
+<th class="head">Significant</th>
+<th class="head">class_comparison</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">A065E</th>
+<td>E</td>
+<td>A</td>
+<td>-0.8735264745</td>
+<td>deleterious</td>
+<td>0.0042671186</td>
+<td>0.7176625782</td>
+<td>beneficial</td>
+<td>0.137859817</td>
+<td>0.7176625782</td>
+<td>-0.8735264745</td>
+<td>False</td>
+<td>negative</td>
+</tr>
+<tr class="row-odd"><th class="stub">A247E</th>
+<td>E</td>
+<td>A</td>
+<td>-0.8144007161</td>
+<td>deleterious</td>
+<td>0.0013899701</td>
+<td>0.6216663376</td>
+<td>beneficial</td>
+<td>0.005818297</td>
+<td>0.6216663376</td>
+<td>-0.8144007161</td>
+<td>True</td>
+<td>negative</td>
+</tr>
+<tr class="row-even"><th class="stub">A229E</th>
+<td>E</td>
+<td>A</td>
+<td>1.4019655551</td>
+<td>beneficial</td>
+<td>0.8733185904</td>
+<td>1.1350377019</td>
+<td>beneficial</td>
+<td>0.0230122072</td>
+<td>1.1350377019</td>
+<td>1.4019655551</td>
+<td>False</td>
+<td>robust</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-text"><div class="highlight"><pre><span></span>project_directory
+|-- data_comparison                     : comparison of fitness of mutants between test (eg. treated) and control (eg. untreated).
+|   `-- aas/cds
+|       |-- column mutids               : ID of mutant &lt;ref&gt;&lt;index&gt;&lt;mut&gt;
+|       |-- columns Fi_ctrl,Fi_test    : Fitness(Fi) of all(A) mutants in control and test respectively
+|       `-- column class_comparison     : class of comparison
+|       |
+        data_fit_metrics
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-feats">
+<h3>data_feats<a class="headerlink" href="#data-feats" title="Permalink to this headline">¶</a></h3>
+<p>This includes molecular features extracted by dms2dfe modules.
+Format:</p>
+<table border="1" class="docutils" id="id27">
+<caption><span class="caption-text"><cite>data_feats</cite></span><a class="headerlink" href="#id27" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">aasi (residue number)</th>
+<th class="head">Features provided through cfg/feats</th>
+<th class="head">Features extracted by DSSP eg. dihedral angles</th>
+<th class="head">solvent accessibility etc.</th>
+<th class="head">Distances of residues from provided ligands or active site residue</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">1</th>
+<td>-0.523</td>
+<td>&#160;</td>
+<td>33.7821121216</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">2</th>
+<td>1.027</td>
+<td>H</td>
+<td>34.0788345337</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">3</th>
+<td>1.393</td>
+<td>H</td>
+<td>34.0162849426</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+<td></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="data-mutmat">
+<h3>data_mutmat<a class="headerlink" href="#data-mutmat" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a href="#id15"><span class="problematic" id="id16">*</span></a>.list_mut_cds</li>
+</ol>
+<p>This file contains codon level read depths per mutations scored by variant caller in the form of a list.
+Format:</p>
+<table border="1" class="docutils" id="id28">
+<caption><span class="caption-text"><cite>list_mut_cds</cite></span><a class="headerlink" href="#id28" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">qry_id</th>
+<th class="head">cdi</th>
+<th class="head">cd_type</th>
+<th class="head">ref_cd</th>
+<th class="head">qry_cd</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">SRR1292881.2904</th>
+<td>15</td>
+<td>0</td>
+<td>TGG</td>
+<td>TTT</td>
+</tr>
+<tr class="row-odd"><th class="stub">SRR1292881.2920</th>
+<td>4</td>
+<td>61</td>
+<td>CAG</td>
+<td>GGC</td>
+</tr>
+<tr class="row-even"><th class="stub">SRR1292881.3634</th>
+<td>8</td>
+<td>19</td>
+<td>CAT</td>
+<td>CTG</td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-text"><div class="highlight"><pre><span></span>list_mut_cds
+|   |-- qry_id                  : id of query read
+|   |-- cdi                     : index of reference codon
+|   |-- cd_type                 : type of reference codon (1-64) according to index of codons located in dms2dfe.lib.global_vars
+|   |-- ref_cd                  : sequence of reference codon
+|   `-- qry_cd                  : sequence of query (mutated) codon
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>.mat_mut_cds</li>
+</ol>
+<p>This file contains codon level read depths per mutations scored by variant caller in the form of mutation matrix, where reference codons are in rows and respective mutations are in columns.
+Format:</p>
+<table border="1" class="docutils" id="id29">
+<caption><span class="caption-text"><cite>mat_mut_cds</cite></span><a class="headerlink" href="#id29" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">&#160;</th>
+<th class="head">TTT</th>
+<th class="head">TTC</th>
+<th class="head">TTA</th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">ATG</th>
+<td>156</td>
+<td>36</td>
+<td>215</td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub">ATT</th>
+<td>97</td>
+<td>2121</td>
+<td>68</td>
+<td></td>
+</tr>
+<tr class="row-even"><th class="stub">GAA</th>
+<td>54</td>
+<td>458</td>
+<td>676</td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+<td></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/4io.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Rohan Dandage.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

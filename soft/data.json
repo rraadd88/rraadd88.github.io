@@ -1,0 +1,49 @@
+[{
+"title":"beditor",
+"language":"&#x1F40D3",
+"docs":"https://github.com/rraadd88/beditor/blob/master/README.md",
+"repository":"https://github.com/rraadd88/beditor",
+"package":"https://pypi.org/project/beditor/",
+"logo":"static/beditor.png",
+"tags":["gene editing"]
+},{
+"title":"dms2dfe",
+"language":"&#x1F40D2",
+"docs":"./dms2dfe/latest/html/index.html",
+"repository":"https://github.com/rraadd88/dms2dfe",
+"package":"https://pypi.org/project/dms2dfe/",
+"logo":"static/dms2dfe.png",
+"tags":["deep sequencing"]
+},{
+"title":"htsimaging",
+"language":"&#x1F40D3",
+"docs":"https://github.com/rraadd88/htsimaging/blob/master/README.md",
+"repository":"https://github.com/rraadd88/htsimaging",
+"package":"https://pypi.org/project/htsimaging/",
+"logo":"static/htsimaging.png",
+"tags":["image analysis"]
+},{
+"title":"data2ml",
+"language":"&#x1F40D2",
+"docs":"https://github.com/rraadd88/data2ml/blob/master/README.md",
+"repository":"https://github.com/rraadd88/data2ml",
+"package":"https://pypi.org/project/data2ml/",
+"logo":"static/data2ml.png",
+"tags":["data analysis"]
+},{
+"title":"ppong",
+"language":"&#x1F40D3",
+"docs":"https://github.com/rraadd88/data2ml/blob/master/README.md",
+"repository":"https://github.com/rraadd88/ppong",
+"package":"https://pypi.org/project/ppong/",
+"logo":"static/ppong.png",
+"tags":["non-academic"]
+},{
+"title":"rohan",
+"language":"&#x1F40D3",
+"docs":"https://github.com/rraadd88/data2ml/blob/master/README.md",
+"repository":"https://github.com/rraadd88/rohan",
+"package":"https://pypi.org/project/rohan/",
+"logo":"static/rohan.png",
+"tags":["data analysis"]
+}]

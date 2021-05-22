@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+        <meta charset='utf-8' />
+        <title>rohan dandage</title>
+        <link rel="icon" type="image/x-icon" href="static/site.ico" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap core CSS -->
+        <!-- <link href="static/css/bootstrap.min.css" rel="stylesheet"> -->
+
+        <!-- Custom style -->
+        <!-- <link rel="stylesheet" type="text/css" href="static/css/style.css" /> -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- tooltip -->
+		<link href="src/style.adaptip.css" rel="stylesheet">
+		<script src="//code.jquery.com/jquery.min.js"></script>
+		<script src="src/jquery.adaptip.js"></script>
+  
+  <script>
+  $( function() {
+    $( document ).tooltip();
+  } );
+  </script>
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  font-size: 90%;
+  visibility: hidden;
+  width: 110px;
+  margin-left: -55px;
+  padding: 0px 0;
+  border-width: 0px;
+  background-color: #000080;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  top: 90%;
+  left: 50%;
+  opacity: 0;
+  transition:opacity 1s ease-out, background 1s ease-in;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  /*margin-left: -5px;*/
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+
+</head>
+
+<body>
+
+  <aside class='intro'>
+  <div class='logo'>
+    <img alt='' src='static/profile.gif' width='300px'>
+  </div>
+  <span class='load'></span>
+  <span class='background'></span>
+</aside>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
+
+  
+
+        <div class="container vertical-center">
+            <div class="content">
+                <div class="border-left">
+                    <div class="row"><span class="big-text"><a href="#">rohan dandage</a></span></div>
+                </div>
+
+                <div class="links">
+                    <div class="border-left">
+                        <div class="row"><span class="mid-text"><a href="./pubs/index.html">research interests🔬</a></span></div>
+                        <div class="row"><span class="mid-text"><a href="./soft/index.html">softwares💻</a></span></div>
+                        <div class="row"><span class="mid-text"><a >blogs📝</a></span></div>
+                    </div>
+                </div>
+                <div class="links">
+                    <!-- <div class="border-left">                         -->
+                        <div class="row">
+                          <span class="mid-text">
+                            <div class="tooltip">
+                                <a href="https://drive.google.com/file/d/1chAOXZkBymJUlFF3jegBqGfGQ7-wmHQ7/view?usp=sharing" target="_blank">&nbsp;
+                                  <img  src="static/resume.ico" target="_blank"/></a>&nbsp;--
+                              <span class="tooltiptext">
+                                get CV
+                              </span>
+                            </div>
+                            <div class="tooltip">
+                                <a href="https://twitter.com/rohanscing" target="_blank">
+                                  <img  src="static/twitter.ico" target="_blank"/></a>&nbsp;--
+                              <span class="tooltiptext">
+                                twitter
+                              </span>
+                            </div>
+                            <div class="tooltip">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=rohanadandage@gmail.com;rohan.dandage.1@ulaval.ca" target="_blank">
+                                  <img  src="static/email.ico" target="_blank"/></a>&nbsp;--
+                              <span class="tooltiptext">
+                                email
+                              </span>
+                            </div>
+                            <div class="tooltip">
+                                <a href="https://github.com/rraadd88" target="_blank">
+                                  <img  src="static/github.ico" target="_blank"/></a>
+                              <span class="tooltiptext">
+                                github
+                              </span>
+                            </div>
+                        </div></a>
+                              <!-- <a target="_blank" href="cv">&nbsp;&nbsp;&nbsp;<img src="static/resume.ico" target="_blank"/>&nbsp;--</a> -->
+                              <!-- <a target="_blank" href="https://twitter.com/rohanscing"><img src="static/twitter.ico" target="_blank"/>&nbsp;--</a> -->
+                              <!-- <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=rohanadandage@gmail.com;rohan.dandage.1@ulaval.ca"><img src="static/email.ico" target="_blank"/>&nbsp;--</a> -->
+                              <!-- <a target="_blank" href="https://github.com/rraadd88"><img src="static/github.ico" target="_blank"/></a> -->
+                          </span>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+<!-- JS ini-->
+<!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
+<script src="js/d3.v3.min.js"></script> <!-- offline -->
+<script src="js/bkg.js"></script>
+<!-- JS end-->
+
+<script  src="js/index.js"></script>
+
+</body>
+
+</html>

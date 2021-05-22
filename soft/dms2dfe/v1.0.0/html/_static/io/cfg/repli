@@ -1,0 +1,5 @@
+varname,replicate_1,replicate_2,replicate_3
+sample1,sample1_replicate1,sample1_replicate2,sample1_replicate3
+sample2,sample2_replicate1,sample2_replicate2,sample3_replicate3
+sample3,sample3_replicate1,sample3_replicate2,sample3_replicate3
+..,..,..,..

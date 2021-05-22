@@ -1,0 +1,5 @@
+varname,fhs_1,fhs_2
+sample1,SRRNNNNNN1_R1.fastq,SRRNNNNNN1_R2.fastq
+sample2,SRRNNNNNN2_R1.fastq,SRRNNNNNN2_R2.fastq
+sample3,SRRNNNNNN3_R1.fastq,SRRNNNNNN3_R2.fastq
+..,..,..

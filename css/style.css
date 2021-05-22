@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+body {
+    color: black;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 16px;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.content {
+    margin: auto;
+    min-width: 300px;
+    max-width: 640px;
+}
+
+.border-left {
+    border-left: 10px solid #000080;
+    margin-left: 20px;
+    padding-left: 30px;
+}
+
+.big-text {
+    font-size: 200%;
+}
+
+.mid-text {
+    font-size: 125%;
+}
+
+.links {
+    margin-top: 40px;
+    line-height: 2em;
+}
+
+a:link, a:visited, a:active, a:hover {
+    color: black;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0000CD;
+}
+
+
+/*intro snap*/
+.intro {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.intro .background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+/*.intro .load {
+  position: absolute;
+  z-index: 9999 !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: black;
+  -webkit-transform: translate3d(calc(-100% - 1px), 0, 0);
+  transform: translate3d(calc(-100% - 1px), 0, 0);
+}*/
+.intro .logo {
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+}
+.intro .logo img {
+  fill: #fff;
+  opacity: 0;
+}
+
+/*buttons*/
+#container {
+    /*background: green;*/
+    /*height: 200px;*/
+}
+.brightness {
+    background-color: white;
+    display: inline-block;
+   
+}
+.brightness img:hover {
+    opacity: 0.7;
+}
+img{
+    /*width: 100px;*/
+}

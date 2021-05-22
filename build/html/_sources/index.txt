@@ -1,0 +1,121 @@
+.. Publications
+.. ============
+
+.. .. container:: well hero row-fluid summary-box citation
+
+..     .. raw:: html
+
+.. 		<b>
+.. 		<a href="http://dx.doi.org/">
+.. 		title
+.. 		</a> 
+.. 		<span style="float: right;">
+.. 		[<a href="_static/skimage.bib">BiBTeX</a>]
+.. 		</span>
+.. 		</b>
+.. 		<br>
+.. 		rohan
+.. 		<br>
+.. 		journal, year 
+
+.. container:: well hero row-fluid summary-box citation
+
+    .. raw:: html
+
+    	<p>
+		<img target="_blank" src="_static/2017_01.png" width="65" style="float: left;" hspace="10"/>
+		<b>
+		<a target="_blank" href="https://doi.org/10.1101/134569">
+		Differential Strengths Of Molecular Determinants Guide Environment Specific Mutational Fates
+		</a> 
+		<span style="float: right;">
+		[<a href=""></a>]
+		</span>
+		</b>
+		<br>
+		<b>Rohan Dandage</b>, Rajesh Pandey, Gopal Jayaraj, Kausik Chakraborty
+		<br>
+		bioRxiv, 2017 
+		</p> 
+
+.. container:: well hero row-fluid summary-box citation
+
+    .. raw:: html
+
+    	<p>
+		<img target="_blank" src="_static/2016_02.png" width="65" style="float: left;" hspace="10"/>
+		<b>
+		<a target="_blank" href="http://biorxiv.org/content/early/2016/08/31/072645">
+		dms2dfe: Comprehensive Workflow for Analysis of Deep Mutational Scanning Data
+		</a> 
+		<span style="float: right;">
+		[<a target="_blank" href="http://kc-lab.github.io/dms2dfe">More</a>]
+		</span>
+		</b>
+		<br>
+		<b>Rohan Dandage</b>, Kausik Chakraborty
+		<br>
+		bioRxiv, 2016 
+		</p> 
+
+.. container:: well hero row-fluid summary-box citation
+
+    .. raw:: html
+
+    	<p>
+		<img src="_static/2016_01.png" width="65" style="float: left;" hspace="10"/>
+		Comments: <b>
+		<a target="_blank" href="http://www.cell.com/cell-systems/pdf/S2405-4712(16)00011-9.pdf">
+		Need for Multi-level Integration
+		</a> 
+		<span style="float: right;">
+		[<a href=""></a>]
+		</span>
+		</b>
+		<br>
+		<b>Rohan Dandage</b>
+		<br>
+		Cell Systems, 2016 
+		</p> 
+
+.. container:: well hero row-fluid summary-box citation
+
+    .. raw:: html
+
+    	<p>
+		<img src="_static/2015_01.png" width="65" style="float: left;" hspace="10"/>
+		<b>
+		<a target="_blank" href="http://dx.doi.org/10.1021/cb500798y">
+		Classification of chemical chaperones based on their effect on protein folding landscapes
+		</a> 
+		<span style="float: right;">
+		[<a href=""></a>]
+		</span>
+		</b>
+		<br>
+		<b>Rohan Dandage</b>, Anannya Bandyopadhyay, Gopal Gunanathan Jayaraj, Kanika Saxena, Vijit Dalal, Aritri Das, Kausik Chakraborty
+		<br>
+		ACS chemical biology, 2015 
+		</p> 
+
+.. container:: well hero row-fluid summary-box citation
+
+    .. raw:: html
+ 
+		<a class="btn-small btn-primary" target="_blank" href="https://twitter.com/rohandandage">
+		<i class="icon-download icon-white">twitter</i></a>
+
+		<a class="btn-small btn-success" target="_blank" href="https://github.com/rraadd88">
+		<i class="icon-download icon-white">Github</i></a>
+
+		<span style="float: right;">
+
+		<a class="btn-small btn-info">
+		<i class="icon-download icon-white">rraadd_8@hotmail.com</i></a>
+
+		<a class="btn-small btn-info">
+		<i class="icon-download icon-white">rohan@igib.in</i></a>
+		</span> 
+
+.. toctree::
+	:maxdepth: 1

@@ -1,0 +1,5 @@
+mutids,mut,ref,FiA_test,class_fit_test,padj_test,FiA_ctrl,class_fit_ctrl,padj_ctrl,Fi_ctrl,Fi_test,Significant,class_comparison
+A065E,E,A,-0.8735264745,deleterious,0.0042671186,0.7176625782,beneficial,0.137859817,0.7176625782,-0.8735264745,False,negative
+A247E,E,A,-0.8144007161,deleterious,0.0013899701,0.6216663376,beneficial,0.005818297,0.6216663376,-0.8144007161,True,negative
+A229E,E,A,1.4019655551,beneficial,0.8733185904,1.1350377019,beneficial,0.0230122072,1.1350377019,1.4019655551,False,robust
+..,..,..,..,..,..,..,..,..,..,..,..,..

@@ -1,0 +1,42 @@
+.. _installation:
+
+==========================================
+Installation
+==========================================
+
+Requirements
+------------
+
+Required python packages would be auto installed while installing `dms2dfe`. `Anaconda Python Distribution`_ is recommended for installing dependent python packages.
+
+.. _Anaconda Python Distribution: https://repo.continuum.io/archive/Anaconda2-4.0.0-Linux-x86_64.sh
+
+Especially we recommend installing `gcc` and `pysam` prior installing `dms2dfe`.
+
+.. code-block:: text
+
+    conda install -c anaconda gcc
+    conda install -c bioconda pysam==0.8.4
+
+Except for DESeq2 and UCSF-Chimera (optional), all other dependencies are auto-installed. 
+Please refer to :ref:`dependencies` for more information.
+
+Installation of `dms2dfe`
+-------------------------
+
+Download the latest release from https://github.com/kc-lab/dms2dfe/releases .
+
+.. code-block:: text
+
+    cd dms2dfe
+    pip install .
+
+Troubleshoot
+------------
+
+Please refer to :ref:`Troubleshoot` page.
+
+Questions
+---------
+
+Please mention them here: https://github.com/rraadd88/dms2dfe/issues .

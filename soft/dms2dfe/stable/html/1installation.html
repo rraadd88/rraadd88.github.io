@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation &#8212; dms2dfe 1.0.6 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage" href="2usage.html" />
+    <link rel="prev" title="Overview" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          dms2dfe</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0.6</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="#">Installation</a></li>
+                <li><a href="2usage.html">Usage</a></li>
+                <li><a href="6test.html">Example</a></li>
+                <li><a href="4io.html">I/O</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3programs.html">Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4io.html">I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6test.html">Example Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1installation_deps.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7troubleshoot.html">Troubleshoot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6contributors.html">Guidelines for contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8future.html">Future releases</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#before-install-recommended">Before install (Recommended)</a></li>
+<li><a class="reference internal" href="#installation-of-dms2dfe">Installation of <cite>dms2dfe</cite></a></li>
+<li><a class="reference internal" href="#questions">Questions</a></li>
+<li><a class="reference internal" href="#optional-manually-installed-dependencies">(Optional) Manually installed dependencies</a></li>
+<li><a class="reference internal" href="#optional-manually-adding-paths-to-dependencies">(Optional) Manually adding paths to dependencies</a></li>
+<li><a class="reference internal" href="#troubleshoot">Troubleshoot</a></li>
+<li><a class="reference internal" href="#citations">Citations</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="before-install-recommended">
+<h2>Before install (Recommended)<a class="headerlink" href="#before-install-recommended" title="Permalink to this headline">¶</a></h2>
+<p>In order for the installation of <cite>dms2dfe</cite> and its dependencies to run smoothly, make sure that the debian system has fundamental packages required for installations e.g. <cite>gcc</cite> (GNU Compiler Collection) etc. Following command would install them if they are absent on your system: <cite>sudo apt-get install build-essential zlib1g-dev libncurses5-dev libncursesw5-dev gawk;sudo apt-get update</cite>.</p>
+<p><cite>dms2dfe</cite> requires python 2.7 environment and a linux system (tested on debian).
+<a class="reference external" href="https://conda.io/docs/user-guide/install/download.html">Anaconda Python Distribution</a> is recommended for installing required python packages.
+In order to avoid common issues with installation, a conda environment can be created.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/rraadd88/dms2dfe/master/environment.yml
+conda env create -f environment.yml
+</pre></div>
+</div>
+<p>Activate the python environment by following command,</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>source activate dms2dfe
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-of-dms2dfe">
+<h2>Installation of <cite>dms2dfe</cite><a class="headerlink" href="#installation-of-dms2dfe" title="Permalink to this headline">¶</a></h2>
+<p>To install the package written in python 2.7, simply execute following command:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>pip install dms2dfe
+</pre></div>
+</div>
+<p>Source releases are hosted at <a class="reference external" href="https://github.com/kc-lab/dms2dfe/releases">https://github.com/kc-lab/dms2dfe/releases</a>.
+Optional dependency UCSF-Chimera can be manually installed as described in <a class="reference internal" href="#deps">deps</a> section below.</p>
+</div>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<p>Please mention them here: <a class="reference external" href="https://github.com/kc-lab/dms2dfe/issues">https://github.com/kc-lab/dms2dfe/issues</a> .</p>
+</div>
+<div class="section" id="optional-manually-installed-dependencies">
+<span id="deps"></span><h2>(Optional) Manually installed dependencies<a class="headerlink" href="#optional-manually-installed-dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Visualizations on the PDB structures (step=5)    : UCSF-Chimera (tested on 1.10.1)
+</pre></div>
+</div>
+<p>Through visuazation modules of <cite>dms2dfe</cite>, position wise fitness scores would be written in the B-factor (temperature factor) of PDB structures.
+Users can use UCSF-Chimera <a class="footnote-reference" href="#id10" id="id2">[1]</a> to make visualizations automatically (download link <a class="reference external" href="https://www.cgl.ucsf.edu/chimera/cgi-bin/secure/chimera-get.py?file=linux_x86_64/chimera-1.10.1-linux_x86_64.bin">here</a>). Please refer to <a class="reference internal" href="v0.1.0_b161005/src/7troubleshoot.html#troubleshoot"><span class="std std-ref">Troubleshoot</span></a> page for any issues.</p>
+<p>This dependency is optional because users can use any PDB viewer of their choice to visualize the .pdb files (located in <cite>project_directory/plots/aas</cite>).</p>
+</div>
+<div class="section" id="optional-manually-adding-paths-to-dependencies">
+<h2>(Optional) Manually adding paths to dependencies<a class="headerlink" href="#optional-manually-adding-paths-to-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Following are the external dependencies that are auto-installed during initialisation of dms2dfe:</p>
+<dl class="docutils">
+<dt>Trimmomatic (0.33) <a class="footnote-reference" href="#id11" id="id3">[2]</a></dt>
+<dd>Quality control .fastq files</dd>
+<dt>Bowtie2 (2.2.1) <a class="footnote-reference" href="#id12" id="id4">[3]</a></dt>
+<dd>Alignining .fastq files</dd>
+<dt>samtools (0.1.18) <a class="footnote-reference" href="#id13" id="id5">[4]</a></dt>
+<dd>Convert sam to sorted bam</dd>
+<dt>DSSP (2.0.4) <a class="footnote-reference" href="#id14" id="id6">[5]</a></dt>
+<dd>Feature extraction from PDB structure</dd>
+<dt>Clustalo (1.2.2) <a class="footnote-reference" href="#id15" id="id7">[6]</a></dt>
+<dd>Feature extraction from MSA</dd>
+<dt>MSMS (2.6.1) <a class="footnote-reference" href="#id16" id="id8">[7]</a></dt>
+<dd>Feature extraction: residue depth</dd>
+<dt>Rate4site (3.0.0) <a class="footnote-reference" href="#id17" id="id9">[8]</a></dt>
+<dd>Feature extraction: conservation scores</dd>
+</dl>
+<p>With default configuration, these dependencies would be locally configured and their paths would be appended to <cite>project_directory/cfg/info</cite> file.</p>
+<p>In case dependencies are already installed on your system, (custom) paths to the source files can be added manually in the <cite>project_directory/cfg/info</cite> file.</p>
+</div>
+<div class="section" id="troubleshoot">
+<h2>Troubleshoot<a class="headerlink" href="#troubleshoot" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to <a class="reference internal" href="v0.1.0_b161005/src/7troubleshoot.html#troubleshoot"><span class="std std-ref">Troubleshoot</span></a> page.</p>
+</div>
+<div class="section" id="citations">
+<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Pettersen, E. F., Goddard, T. D., Huang, C. C., Couch, G. S., Greenblatt, D. M., Meng, E. C., &amp; Ferrin, T. E. (2004). UCSF Chimera—a visualization system for exploratory research and analysis. Journal of computational chemistry, 25(13), 1605-1612.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Bolger, A. M., Lohse, M., &amp; Usadel, B. (2014). Trimmomatic: a flexible trimmer for Illumina sequence data. Bioinformatics, 30(15), 2114-2120.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td>Langmead, Ben, and Steven L Salzberg. 2012. “Fast gapped-read alignment with Bowtie 2.” Nat Methods 9 (4): 357–59. doi:10.1038/nmeth.1923.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td>Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., … &amp; Durbin, R. (2009). The sequence alignment/map format and SAMtools. Bioinformatics, 25(16), 2078-2079.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td>Kabsch, W., &amp; Sander, C. (1983). Dictionary of protein secondary structure: pattern recognition of hydrogen‐bonded and geometrical features. Biopolymers, 22(12), 2577-2637.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id15" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td>Sievers, F., &amp; Higgins, D. G. (2014). Clustal Omega, accurate alignment of very large numbers of sequences. Multiple sequence alignment methods, 105-116.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[7]</a></td><td>Sanner, M. F., Olson, A. J., &amp; Spehner, J. C. (1996). Reduced surface: an efficient way to compute molecular surfaces. Biopolymers, 38(3), 305-320.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id17" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[8]</a></td><td>Pupko, T., Bell, R. E., Mayrose, I., Glaser, F., &amp; Ben-Tal, N. (2002). Rate4Site: an algorithmic tool for the identification of functional regions in proteins by surface mapping of evolutionary determinants within their homologues. Bioinformatics, 18(suppl_1), S71-S77.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/1installation.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Rohan Dandage.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

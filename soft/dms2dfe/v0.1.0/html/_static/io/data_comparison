@@ -1,0 +1,5 @@
+ref,mut,mutids,Fi_ctrl,Fi_test,class_fit_ctrl,class_fit_test,class_comparison
+M,A,M001A,-3.8114819161,-0.8038813745,deleterious,neutral,positive
+S,A,S002A,-2.4818902937,-4.3878053439,deleterious,deleterious,robust
+I,A,I003A,-0.5472736447,-2.9138648157,neutral,deleterious,negative
+..,..,..,..,..,..,..,..

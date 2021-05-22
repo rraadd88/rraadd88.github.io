@@ -1,0 +1,5 @@
+aasi (residue number),Features provided through cfg/feats,Features extracted by DSSP eg. dihedral angles, solvent accessibility etc.,Distances of residues from provided ligands or active site residue
+1,-0.523,,33.7821121216
+2,1.027,H,34.0788345337
+3,1.393,H,34.0162849426
+..,..,..,..

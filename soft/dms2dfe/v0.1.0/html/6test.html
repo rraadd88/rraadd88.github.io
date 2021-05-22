@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Example &mdash; dms2dfe 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.3.6/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="dms2dfe 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="API" href="5api.html" />
+    <link rel="prev" title="I/O" href="4io.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          dms2dfe</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="1installation.html">Installation</a></li>
+                <li><a href="2usage.html">Usage</a></li>
+                <li><a href="3programs.html">Programs</a></li>
+                <li><a href="4io.html">I/O</a></li>
+                <li><a href="#">Example</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3programs.html">Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4io.html">I/O</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1installation_deps.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7troubleshoot.html">Troubleshoot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8future.html">Future releases</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Example</a><ul>
+<li><a class="reference internal" href="#tem-1-beta-lactamase-tem1">TEM-1 beta-lactamase (TEM1)</a><ul>
+<li><a class="reference internal" href="#downloading-dataset">Downloading dataset</a></li>
+<li><a class="reference internal" href="#run-dms2dfe">Run dms2dfe</a></li>
+<li><a class="reference internal" href="#outputs">Outputs</a></li>
+<li><a class="reference internal" href="#input-configurations">Input configurations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aminoglycoside-3-phosphotransferase-aph2-from-publication-data">Aminoglycoside-3 -phosphotransferase (APH2) from &#8216;publication data&#8217;</a><ul>
+<li><a class="reference internal" href="#id9">Downloading dataset</a></li>
+<li><a class="reference internal" href="#id10">Run dms2dfe</a></li>
+<li><a class="reference internal" href="#id11">Outputs</a></li>
+<li><a class="reference internal" href="#id19">Input configurations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aminoglycoside-3-phosphotransferase-aph2-from-sequencing-data">Aminoglycoside-3 -phosphotransferase (APH2) from &#8216;sequencing data&#8217;</a><ul>
+<li><a class="reference internal" href="#id20">Downloading dataset</a></li>
+<li><a class="reference internal" href="#id21">Run dms2dfe</a></li>
+<li><a class="reference internal" href="#id22">Outputs</a></li>
+<li><a class="reference internal" href="#id35">Input configurations</a></li>
+<li><a class="reference internal" href="#citations">Citations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="example">
+<span id="id1"></span><h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
+<p>Following are few example datasets included in the <cite>dms2dfe</cite> package (located at &#8216;dms2dfe/test_dataset&#8217;).</p>
+<p>TEM1_Firnberg_et_al_2014 (TEM1) dataset is analyzed from &#8216;publication data&#8217;.</p>
+<p>APH2_Melnikov_et_al_2014 (APH2) dataset is analyzed from &#8216;sequencing data&#8217; downloaded from SRA or alternatively, this dataset can be analyzed from &#8216;publication data&#8217;.</p>
+<p>These options are provided in the <cite>get_test_dataset.py</cite> script located in &#8216;dms2dfe/test_dataset&#8217;.</p>
+<div class="section" id="tem-1-beta-lactamase-tem1">
+<h2>TEM-1 beta-lactamase (TEM1)<a class="headerlink" href="#tem-1-beta-lactamase-tem1" title="Permalink to this headline">¶</a></h2>
+<p>We used a dataset from <a class="reference internal" href="#firnberg">Firnberg</a> et. al., where DMS of E. coli TEM-1 beta-lactamase, an ampicilin resistant gene was carried out. Here we use a subset of data in which mutants were selected for resistance against Ampicilin at 256 ug/ml (Amp256) and (Amp0.5).
+In this analysis we start from frequencies of amino acid mutants and estimate fitness.</p>
+<div class="section" id="downloading-dataset">
+<h3>Downloading dataset<a class="headerlink" href="#downloading-dataset" title="Permalink to this headline">¶</a></h3>
+<p>The dataset for this example can be downloaded by a python script <cite>get_test_dataset.py</cite> located in <cite>dms2dfe/test_dataset</cite>.</p>
+<div class="highlight-text"><div class="highlight"><pre>cd dms2dfe/test_dataset
+python get_test_dataset.py
+</pre></div>
+</div>
+<p>Here the project directory is <cite>TEM1_Firnberg_et_al_2014</cite>.</p>
+</div>
+<div class="section" id="run-dms2dfe">
+<h3>Run dms2dfe<a class="headerlink" href="#run-dms2dfe" title="Permalink to this headline">¶</a></h3>
+<p>To run <cite>dms2dfe</cite> on the dataset simply fire following command though bash,</p>
+<div class="highlight-text"><div class="highlight"><pre>python path/to/dms2dfe/pipeline.py TEM1_Firnberg_et_al_2014
+</pre></div>
+</div>
+</div>
+<div class="section" id="outputs">
+<h3>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h3>
+<p>With a successful run of <cite>dms2dfe</cite>, output visualizations for sample <cite>Amp256</cite> should look like following.</p>
+<dl class="docutils">
+<dt># Frequencies of mutants in the unselected (Amp256) pool</dt>
+<dd>data: test_dataset/TEM1_Firnberg_et_al_2014/data_lbl/aas/Amp256</dd>
+</dl>
+<img alt="_images/fig_heatmap_Amp256.png" id="id2" src="_images/fig_heatmap_Amp256.png" />
+<dl class="docutils">
+<dt># Mutation matrix of preferential enrichments</dt>
+<dd>data: test_dataset/TEM1_Firnberg_et_al_2014/data_fit/aas/Amp256_WRT_Amp0.5</dd>
+</dl>
+<img alt="_images/fig_heatmap_Amp256_WRT_Amp0.5.png" id="id3" src="_images/fig_heatmap_Amp256_WRT_Amp0.5.png" />
+<dl class="docutils">
+<dt># Mutation matrix of fitness scores</dt>
+<dd>data: test_dataset/TEM1_Firnberg_et_al_2014/data_fit/aas/Amp256_WRT_Amp0.5_inferred</dd>
+</dl>
+<img alt="_images/fig_heatmap_Amp256_WRT_Amp0.5_inferred.png" id="id4" src="_images/fig_heatmap_Amp256_WRT_Amp0.5_inferred.png" />
+<dl class="docutils">
+<dt># Distribution of fitness</dt>
+<dd>data: test_dataset/TEM1_Firnberg_et_al_2014/data_fit/aas/Amp256_WRT_Amp0.5_inferred</dd>
+</dl>
+<img alt="_images/fig_dfe_Amp256_WRT_Amp0.5_inferred.png" id="id5" src="_images/fig_dfe_Amp256_WRT_Amp0.5_inferred.png" />
+<dl class="docutils">
+<dt># Substitution matrix based on Fitness values</dt>
+<dd>data: test_dataset/TEM1_Firnberg_et_al_2014/data_fit/aas/Amp256_WRT_Amp0.5_inferred</dd>
+</dl>
+<img alt="_images/fig_sub_matrix_Amp256_WRT_Amp0.5_inferred.png" id="id6" src="_images/fig_sub_matrix_Amp256_WRT_Amp0.5_inferred.png" />
+<dl class="docutils">
+<dt># Fitness values projected on PDB structure</dt>
+<dd>data: test_dataset/TEM1_Firnberg_et_al_2014/data_fit/aas/Amp256_WRT_Amp0.5_inferred</dd>
+</dl>
+<img alt="_images/fig_pdb_Amp256_WRT_Amp0.5_inferred.png" id="id7" src="_images/fig_pdb_Amp256_WRT_Amp0.5_inferred.png" />
+<dl class="docutils">
+<dt># ROC curve of random forest classification model</dt>
+<dd>data: test_dataset/TEM1_Firnberg_et_al_2014/data_ml/aas/data_ml_regress_all_data_fit_aas_Amp256_WRT_Amp0.5</dd>
+</dl>
+<img alt="_images/fig_ml_classi1_roc_data_fit_aas_Amp256_WRT_Amp0.5.png.png" id="id8" src="_images/fig_ml_classi1_roc_data_fit_aas_Amp256_WRT_Amp0.5.png.png" />
+</div>
+<div class="section" id="input-configurations">
+<h3>Input configurations<a class="headerlink" href="#input-configurations" title="Permalink to this headline">¶</a></h3>
+<p>Following configurations (located in <cite>TEM1_Firnberg_et_al_2014/cfg</cite>) were used for analysis.</p>
+<table border="1" class="docutils" id="id36">
+<caption><span class="caption-text"><cite>TEM1_Firnberg_et_al_2014/cfg/info</cite></span><a class="headerlink" href="#id36" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">varname</th>
+<th class="head">description</th>
+<th class="head">input</th>
+<th class="head">default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">host</th>
+<td>Host name for assigning codon table [coli | yeast | sapiens]</td>
+<td>e_coli</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Ni_cutoff</th>
+<td>Cut off for frequency per mutant</td>
+<td>&nbsp;</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><th class="stub">Q_cutoff</th>
+<td>Cut off for Phred score quality</td>
+<td>&nbsp;</td>
+<td>30</td>
+</tr>
+<tr class="row-odd"><th class="stub">norm_type</th>
+<td>Type of normalization across samples [wild: wrt wild type | syn : wrt synonymous mutations | none : fold change serves as fitness]</td>
+<td>none</td>
+<td>wild</td>
+</tr>
+<tr class="row-even"><th class="stub">fsta_fh</th>
+<td>Path to reference fasta file</td>
+<td>TEM1_Firnberg_et_al_2014/btem.fasta</td>
+<td>found in project directory</td>
+</tr>
+<tr class="row-odd"><th class="stub">pdb_fh</th>
+<td>Path to pdb file</td>
+<td>TEM1_Firnberg_et_al_2014/btem.pdb</td>
+<td>found in project directory</td>
+</tr>
+<tr class="row-even"><th class="stub">alignment_type</th>
+<td>Alignment type [loc:local | glob:global]</td>
+<td>&nbsp;</td>
+<td>loc</td>
+</tr>
+<tr class="row-odd"><th class="stub">cores</th>
+<td>Number of cores to be used</td>
+<td>2</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><th class="stub">active_sites</th>
+<td>Optional: residue numbers of active sites (space delimited) eg. 68&lt;SPACE&gt;192</td>
+<td>68 166</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">dssp_fh</th>
+<td>Optional: path to dssp module</td>
+<td>dms2dfe_dependencies/dssp-2.0.4-linux-amd64</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">trimmomatic_fh</th>
+<td>Optional: path to trimmomatic source (.jar) file</td>
+<td>dms2dfe_dependencies/Trimmomatic-0.33/trimmomatic-0.33.jar</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">cctmr</th>
+<td>Optional: if reference sequence is concatamer (space delimited) eg. 1&lt;SPACE&gt;265&lt;SPACE&gt;268&lt;SPACE&gt;532&#8221;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">bowtie2_fh</th>
+<td>Optional: path to bowtie2 source file</td>
+<td>dms2dfe_dependencies/bowtie2-2.2.1/bowtie2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">samtools_fh</th>
+<td>Optional: path to samtools source file</td>
+<td>dms2dfe_dependencies/samtools-0.1.18/samtools</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">clustalo_fh</th>
+<td>&nbsp;</td>
+<td>dms2dfe_dependencies/clustalo-1.2.2-Ubuntu-x86_64</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">msms_fh</th>
+<td>&nbsp;</td>
+<td>dms2dfe_dependencies/msms/msms.x86_64Linux2.2.6.1</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">rate4site_fh</th>
+<td>&nbsp;</td>
+<td>dms2dfe_dependencies/rate4site/rate4site-3.0.0/src/rate4site/rate4site</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id37">
+<caption><span class="caption-text"><cite>TEM1_Firnberg_et_al_2014/cfg/lbls</cite></span><a class="headerlink" href="#id37" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">varname</th>
+<th class="head">fhs_1</th>
+<th class="head">fhs_2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">Amp0.5</th>
+<td>TEM1_Firnberg_et_al_2014/data_lbl/Amp0.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Amp256</th>
+<td>TEM1_Firnberg_et_al_2014/data_lbl/Amp256</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id38">
+<caption><span class="caption-text"><cite>TEM1_Firnberg_et_al_2014/cfg/fit</cite></span><a class="headerlink" href="#id38" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">&nbsp;</th>
+<th class="head">unsel</th>
+<th class="head">sel_1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">0</th>
+<td>Amp0.5</td>
+<td>Amp256</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id39">
+<caption><span class="caption-text"><cite>TEM1_Firnberg_et_al_2014/cfg/feats</cite></span><a class="headerlink" href="#id39" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">aasi</th>
+<th class="head">Conservation score (ConSurf)</th>
+<th class="head">Solvent accessibility (PopMusic)</th>
+<th class="head">Average $DeltaDelta G$ per sequence position (PopMusic)</th>
+<th class="head">Sum of negative contributors (PopMusic)</th>
+<th class="head">Sum of positive contributors (PopMusic)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">26</th>
+<td>-0.523</td>
+<td>44.64</td>
+<td>0.4</td>
+<td>0.0</td>
+<td>7.62</td>
+</tr>
+<tr class="row-odd"><th class="stub">27</th>
+<td>1.027</td>
+<td>57.72</td>
+<td>0.16</td>
+<td>-0.56</td>
+<td>3.66</td>
+</tr>
+<tr class="row-even"><th class="stub">28</th>
+<td>1.393</td>
+<td>56.57</td>
+<td>0.15</td>
+<td>-0.39</td>
+<td>3.29</td>
+</tr>
+<tr class="row-odd"><th class="stub">29</th>
+<td>0.889</td>
+<td>0.49</td>
+<td>1.18</td>
+<td>0.0</td>
+<td>22.45</td>
+</tr>
+<tr class="row-even"><th class="stub">30</th>
+<td>2.075</td>
+<td>20.12</td>
+<td>1.72</td>
+<td>0.0</td>
+<td>32.74</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="aminoglycoside-3-phosphotransferase-aph2-from-publication-data">
+<h2>Aminoglycoside-3 -phosphotransferase (APH2) from &#8216;publication data&#8217;<a class="headerlink" href="#aminoglycoside-3-phosphotransferase-aph2-from-publication-data" title="Permalink to this headline">¶</a></h2>
+<p>We used a dataset from <a class="reference internal" href="#melnikov">Melnikov</a> et. al., where DMS of aminoglycoside-3 -phosphotransferase-II (APH(3&#8217;)II), an aminoglycosde resistant gene was carried out. Here we use a subset of data in which mutants is selected for resistance against Kanamicin at 1:4 MIC of wild type (sample KKA2_S1_Kan14_L1). The background library (sample KKA2_Bkg1).
+In this analysis we start from frequencies of the mutants (<cite>publication data</cite>).</p>
+<div class="section" id="id9">
+<h3>Downloading dataset<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>The dataset for this example can be downloaded by a python script <cite>get_test_dataset.py</cite> located in <cite>dms2dfe/test_dataset</cite>.</p>
+<div class="highlight-text"><div class="highlight"><pre>cd dms2dfe/test_dataset
+python get_test_dataset.py
+</pre></div>
+</div>
+<p>Here the project directory is <cite>APH2_Melnikov_et_al_2014</cite>.</p>
+</div>
+<div class="section" id="id10">
+<h3>Run dms2dfe<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>To run <cite>dms2dfe</cite> on the dataset simply fire following command though bash,</p>
+<div class="highlight-text"><div class="highlight"><pre>python path/to/dms2dfe/pipeline.py APH2_Melnikov_et_al_2014
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>Outputs<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>With a successful run of <cite>dms2dfe</cite>, output visualizations for sample <cite>KKA2_S1_Kan14_L1</cite> should look like following.</p>
+<dl class="docutils">
+<dt># Frequencies of mutants in the unselected (KKA2_Bkg1) pool</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_lbl/aas/KKA2_Bkg1</dd>
+</dl>
+<img alt="_images/fig_heatmap_KKA2_Bkg1.png" id="id12" src="_images/fig_heatmap_KKA2_Bkg1.png" />
+<dl class="docutils">
+<dt># Frequencies of mutants in the unselected (KKA2_S1_Kan14_L1) pool</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_lbl/aas/KKA2_S1_Kan14_L1</dd>
+</dl>
+<img alt="_images/fig_heatmap_KKA2_S1_Kan14_L1.png" id="id13" src="_images/fig_heatmap_KKA2_S1_Kan14_L1.png" />
+<dl class="docutils">
+<dt># Mutation matrix of fitness scores</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred</dd>
+</dl>
+<img alt="_images/fig_heatmap_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred.png" id="id14" src="_images/fig_heatmap_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred.png" />
+<dl class="docutils">
+<dt># Distribution of fitness</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred</dd>
+</dl>
+<img alt="_images/fig_dfe_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred.png" id="id15" src="_images/fig_dfe_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred.png" />
+<dl class="docutils">
+<dt># Substitution matrix based on Fitness values</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred</dd>
+</dl>
+<img alt="_images/fig_sub_matrix_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred.png" id="id16" src="_images/fig_sub_matrix_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred.png" />
+<dl class="docutils">
+<dt># Fitness values projected on PDB structure</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred</dd>
+</dl>
+<img alt="_images/fig_pdb_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred.png" id="id17" src="_images/fig_pdb_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1_inferred.png" />
+<dl class="docutils">
+<dt># ROC curve of random forest classification model</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_ml/aas/data_ml_regress_all_data_fit_aas_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1</dd>
+</dl>
+<img alt="_images/fig_ml_classi1_roc_data_fit_aas_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1.png.png" id="id18" src="_images/fig_ml_classi1_roc_data_fit_aas_KKA2_S1_Kan14_L1_WRT_KKA2_Bkg1.png.png" />
+</div>
+<div class="section" id="id19">
+<h3>Input configurations<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>Following configurations (located in <cite>APH2_Melnikov_et_al_2014/cfg</cite>) were used for analysis.</p>
+<table border="1" class="docutils" id="id40">
+<caption><span class="caption-text"><cite>APH2_Melnikov_et_al_2014/cfg/info</cite></span><a class="headerlink" href="#id40" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">varname</th>
+<th class="head">description</th>
+<th class="head">input</th>
+<th class="head">default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">host</th>
+<td>Host name for assigning codon table [coli | yeast | sapiens]</td>
+<td>sapiens</td>
+<td>coli</td>
+</tr>
+<tr class="row-odd"><th class="stub">Ni_cutoff</th>
+<td>Cut off for frequency per mutant</td>
+<td>3</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><th class="stub">Q_cutoff</th>
+<td>Cut off for Phred score quality</td>
+<td>&nbsp;</td>
+<td>30</td>
+</tr>
+<tr class="row-odd"><th class="stub">norm_type</th>
+<td>Type of normalization across samples [wild: wrt wild type | syn : wrt synonymous mutations | none : fold change serves as fitness]</td>
+<td>&nbsp;</td>
+<td>none</td>
+</tr>
+<tr class="row-even"><th class="stub">alignment_type</th>
+<td>Alignment type [loc:local | glob:global]</td>
+<td>&nbsp;</td>
+<td>loc</td>
+</tr>
+<tr class="row-odd"><th class="stub">cores</th>
+<td>Number of cores to be used</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><th class="stub">fsta_fh</th>
+<td>Optional: Path to reference fasta file</td>
+<td>APH2_Melnikov_et_al_2014/aph_wt_nt_cctmr.fasta</td>
+<td>found in project directory</td>
+</tr>
+<tr class="row-odd"><th class="stub">pdb_fh</th>
+<td>Optional: Path to pdb file</td>
+<td>APH2_Melnikov_et_al_2014/1ND4.pdb</td>
+<td>found in project directory</td>
+</tr>
+<tr class="row-even"><th class="stub">active_sites</th>
+<td>Optional: residue numbers of active sites (space delimited) eg. 68&lt;SPACE&gt;192</td>
+<td>190 195 208</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">cctmr</th>
+<td>Optional: if reference sequence is concatamer (space delimited) eg. 1&lt;SPACE&gt;265&lt;SPACE&gt;268&lt;SPACE&gt;532</td>
+<td>1 265 268 532</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">dssp_fh</th>
+<td>Optional: path to dssp module (dependencies)</td>
+<td>dms2dfe_dependencies/dssp-2.0.4-linux-amd64</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">trimmomatic_fh</th>
+<td>Optional: path to trimmomatic source (.jar) file (dependencies)</td>
+<td>dms2dfe_dependencies/Trimmomatic-0.33/trimmomatic-0.33.jar</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">bowtie2_fh</th>
+<td>Optional: path to bowtie2 source file</td>
+<td>dms2dfe_dependencies/bowtie2-2.2.1/bowtie2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">samtools_fh</th>
+<td>Optional: path to samtools source file</td>
+<td>dms2dfe_dependencies/samtools-0.1.18/samtools</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">clustalo_fh</th>
+<td>Optional: path to clustal omega source file</td>
+<td>dms2dfe_dependencies/clustalo-1.2.2-Ubuntu-x86_64</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">msms_fh</th>
+<td>Optional: path to MSMS source file (for calculation of residue depths)</td>
+<td>dms2dfe_dependencies/msms/msms.x86_64Linux2.2.6.1</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">rate4site_fh</th>
+<td>Optional: path to rate4site source file (for calculation of conservation scores)</td>
+<td>dms2dfe_dependencies/rate4site/rate4site-3.0.0/src/rate4site/rate4site</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id41">
+<caption><span class="caption-text"><cite>APH2_Melnikov_et_al_2014/cfg/lbls</cite></span><a class="headerlink" href="#id41" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">varname</th>
+<th class="head">fhs_1</th>
+<th class="head">fhs_2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">KKA2_Bkg1_from_seq_data</th>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292901_1.fastq</td>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292901_2.fastq</td>
+</tr>
+<tr class="row-odd"><th class="stub">KKA2_S1_Kan14_L1_from_seq_data</th>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292881_1.fastq</td>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292881_2.fastq</td>
+</tr>
+<tr class="row-even"><th class="stub">KKA2_S1_Kan11_L1_from_seq_data</th>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292709_1.fastq</td>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292709_2.fastq</td>
+</tr>
+<tr class="row-odd"><th class="stub">KKA2_Bkg1</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">KKA2_S1_Kan14_L1</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id42">
+<caption><span class="caption-text"><cite>APH2_Melnikov_et_al_2014/cfg/fit</cite></span><a class="headerlink" href="#id42" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">unsel</th>
+<th class="head">sel_1</th>
+<th class="head">sel_2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">KKA2_Bkg1_from_seq_data</th>
+<td>KKA2_S1_Kan14_L1_from_seq_data</td>
+<td>KKA2_S1_Kan11_L1_from_seq_data</td>
+</tr>
+<tr class="row-odd"><th class="stub">KKA2_Bkg1</th>
+<td>KKA2_S1_Kan14_L1</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id43">
+<caption><span class="caption-text"><cite>APH2_Melnikov_et_al_2014/cfg/feats</cite></span><a class="headerlink" href="#id43" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">aasi</th>
+<th class="head">Conservation score (ConSurf)</th>
+<th class="head">Solvent accessibility (PopMusic)</th>
+<th class="head">Average $DeltaDelta G$ per sequence position (PopMusic)</th>
+<th class="head">Sum of negative contributors (PopMusic)</th>
+<th class="head">Sum of positive contributors (PopMusic)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">10</th>
+<td>2.154</td>
+<td>100</td>
+<td>0.5</td>
+<td>0</td>
+<td>9.59</td>
+</tr>
+<tr class="row-odd"><th class="stub">11</th>
+<td>0.054</td>
+<td>36.96</td>
+<td>0.37</td>
+<td>-0.15</td>
+<td>7.19</td>
+</tr>
+<tr class="row-even"><th class="stub">12</th>
+<td>-1.208</td>
+<td>0</td>
+<td>2.44</td>
+<td>0</td>
+<td>46.4</td>
+</tr>
+<tr class="row-odd"><th class="stub">13</th>
+<td>2.853</td>
+<td>58.48</td>
+<td>0.51</td>
+<td>-0.43</td>
+<td>10.15</td>
+</tr>
+<tr class="row-even"><th class="stub">14</th>
+<td>0.876</td>
+<td>62.3</td>
+<td>0.29</td>
+<td>-0.33</td>
+<td>5.81</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="aminoglycoside-3-phosphotransferase-aph2-from-sequencing-data">
+<h2>Aminoglycoside-3 -phosphotransferase (APH2) from &#8216;sequencing data&#8217;<a class="headerlink" href="#aminoglycoside-3-phosphotransferase-aph2-from-sequencing-data" title="Permalink to this headline">¶</a></h2>
+<p>We used a dataset from <a class="reference internal" href="#melnikov">Melnikov</a> et. al., where DMS of aminoglycoside-3 -phosphotransferase-II (APH(3&#8217;)II), an aminoglycosde resistant gene was carried out. Here we use a subset of data in which mutants were selected for resistance against Kanamicin at 1:4 MIC of wild type (sample KKA2_S1_Kan14_L1) and at 1:1 MIC of wild type (sample KKA2_S1_Kan11_L1).
+In this analysis we start from unaligned .fastq files (<cite>sequencing data</cite>) and ultimately compare fitness of mutants in two selections.</p>
+<div class="section" id="id20">
+<h3>Downloading dataset<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>The dataset for this example can be downloaded by a python script <cite>get_test_dataset.py</cite> located in <cite>dms2dfe/test_dataset</cite>.</p>
+<div class="highlight-text"><div class="highlight"><pre>cd dms2dfe/test_dataset
+python get_test_dataset.py
+</pre></div>
+</div>
+<p>Here the project directory is <cite>APH2_Melnikov_et_al_2014</cite>.</p>
+</div>
+<div class="section" id="id21">
+<h3>Run dms2dfe<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>To run <cite>dms2dfe</cite> on the dataset simply fire following command though bash,</p>
+<div class="highlight-text"><div class="highlight"><pre>python path/to/dms2dfe/pipeline.py APH2_Melnikov_et_al_2014
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h3>Outputs<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>With a successful run of <cite>dms2dfe</cite>, output visualizations for sample <cite>KKA2_S1_Kan14_L1</cite> should look like following.</p>
+<dl class="docutils">
+<dt># Frequencies of mutants in the unselected (KKA2_Bkg1) pool</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_lbl/aas/KKA2_Bkg1_from_seq_data</dd>
+</dl>
+<img alt="_images/fig_heatmap_KKA2_Bkg1_from_seq_data.png" id="id23" src="_images/fig_heatmap_KKA2_Bkg1_from_seq_data.png" />
+<dl class="docutils">
+<dt># Frequencies of mutants in the KKA2_S1_Kan14_L1 pool</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_lbl/aas/KKA2_S1_Kan14_L1_from_seq_data</dd>
+</dl>
+<img alt="_images/fig_heatmap_KKA2_S1_Kan14_L1_from_seq_data.png" id="id24" src="_images/fig_heatmap_KKA2_S1_Kan14_L1_from_seq_data.png" />
+<dl class="docutils">
+<dt># Frequencies of mutants in the KKA2_S1_Kan11_L1 pool</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_lbl/aas/KKA2_S1_Kan11_L1_from_seq_data</dd>
+</dl>
+<img alt="_images/fig_heatmap_KKA2_S1_Kan11_L1_from_seq_data.png" id="id25" src="_images/fig_heatmap_KKA2_S1_Kan11_L1_from_seq_data.png" />
+<dl class="docutils">
+<dt># Mutation matrix of fitness scores of KKA2_S1_Kan14_L1 pool</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred</dd>
+</dl>
+<img alt="_images/fig_heatmap_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" id="id26" src="_images/fig_heatmap_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" />
+<dl class="docutils">
+<dt># Mutation matrix of fitness scores of KKA2_S1_Kan11_L1 pool</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred</dd>
+</dl>
+<img alt="_images/fig_heatmap_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" id="id27" src="_images/fig_heatmap_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" />
+<dl class="docutils">
+<dt># Distribution of fitness of KKA2_S1_Kan14_L1 pool</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred</dd>
+</dl>
+<img alt="_images/fig_dfe_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" id="id28" src="_images/fig_dfe_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" />
+<dl class="docutils">
+<dt># Distribution of fitness of KKA2_S1_Kan11_L1 pool</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred</dd>
+</dl>
+<img alt="_images/fig_dfe_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" id="id29" src="_images/fig_dfe_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" />
+<dl class="docutils">
+<dt># Substitution matrix of KKA2_S1_Kan14_L1 pool based on Fitness values</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred</dd>
+</dl>
+<img alt="_images/fig_sub_matrix_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" id="id30" src="_images/fig_sub_matrix_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" />
+<dl class="docutils">
+<dt># Substitution matrix of KKA2_S1_Kan11_L1 pool based on Fitness values</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred</dd>
+</dl>
+<img alt="_images/fig_sub_matrix_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" id="id31" src="_images/fig_sub_matrix_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" />
+<dl class="docutils">
+<dt># Fitness values of KKA2_S1_Kan14_L1 pool projected on PDB structure</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred</dd>
+</dl>
+<img alt="_images/fig_pdb_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" id="id32" src="_images/fig_pdb_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" />
+<dl class="docutils">
+<dt># Fitness values of KKA2_S1_Kan11_L1 pool projected on PDB structure</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_fit/aas/KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred</dd>
+</dl>
+<img alt="_images/fig_pdb_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" id="id33" src="_images/fig_pdb_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" />
+<dl class="docutils">
+<dt># Comparison between two experimental conditions</dt>
+<dd>data: test_dataset/APH2_Melnikov_et_al_2014/data_comparison/aas/KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred_VERSUS_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred</dd>
+</dl>
+<img alt="_images/fig_violin_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred_VERSUS_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" id="id34" src="_images/fig_violin_KKA2_S1_Kan11_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred_VERSUS_KKA2_S1_Kan14_L1_from_seq_data_WRT_KKA2_Bkg1_from_seq_data_inferred.png" />
+</div>
+<div class="section" id="id35">
+<h3>Input configurations<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<p>Following configurations (located in <cite>APH2_Melnikov_et_al_2014/cfg</cite>) were used for analysis.</p>
+<table border="1" class="docutils" id="id44">
+<caption><span class="caption-text"><cite>APH2_Melnikov_et_al_2014/cfg/info</cite></span><a class="headerlink" href="#id44" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">varname</th>
+<th class="head">description</th>
+<th class="head">input</th>
+<th class="head">default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">host</th>
+<td>Host name for assigning codon table [coli | yeast | sapiens]</td>
+<td>sapiens</td>
+<td>coli</td>
+</tr>
+<tr class="row-odd"><th class="stub">Ni_cutoff</th>
+<td>Cut off for frequency per mutant</td>
+<td>3</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><th class="stub">Q_cutoff</th>
+<td>Cut off for Phred score quality</td>
+<td>&nbsp;</td>
+<td>30</td>
+</tr>
+<tr class="row-odd"><th class="stub">norm_type</th>
+<td>Type of normalization across samples [wild: wrt wild type | syn : wrt synonymous mutations | none : fold change serves as fitness]</td>
+<td>&nbsp;</td>
+<td>none</td>
+</tr>
+<tr class="row-even"><th class="stub">alignment_type</th>
+<td>Alignment type [loc:local | glob:global]</td>
+<td>&nbsp;</td>
+<td>loc</td>
+</tr>
+<tr class="row-odd"><th class="stub">cores</th>
+<td>Number of cores to be used</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><th class="stub">fsta_fh</th>
+<td>Optional: Path to reference fasta file</td>
+<td>APH2_Melnikov_et_al_2014/aph_wt_nt_cctmr.fasta</td>
+<td>found in project directory</td>
+</tr>
+<tr class="row-odd"><th class="stub">pdb_fh</th>
+<td>Optional: Path to pdb file</td>
+<td>APH2_Melnikov_et_al_2014/1ND4.pdb</td>
+<td>found in project directory</td>
+</tr>
+<tr class="row-even"><th class="stub">active_sites</th>
+<td>Optional: residue numbers of active sites (space delimited) eg. 68&lt;SPACE&gt;192</td>
+<td>190 195 208</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">cctmr</th>
+<td>Optional: if reference sequence is concatamer (space delimited) eg. 1&lt;SPACE&gt;265&lt;SPACE&gt;268&lt;SPACE&gt;532</td>
+<td>1 265 268 532</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">dssp_fh</th>
+<td>Optional: path to dssp module (dependencies)</td>
+<td>dms2dfe_dependencies/dssp-2.0.4-linux-amd64</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">trimmomatic_fh</th>
+<td>Optional: path to trimmomatic source (.jar) file (dependencies)</td>
+<td>dms2dfe_dependencies/Trimmomatic-0.33/trimmomatic-0.33.jar</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">bowtie2_fh</th>
+<td>Optional: path to bowtie2 source file</td>
+<td>dms2dfe_dependencies/bowtie2-2.2.1/bowtie2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">samtools_fh</th>
+<td>Optional: path to samtools source file</td>
+<td>dms2dfe_dependencies/samtools-0.1.18/samtools</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">clustalo_fh</th>
+<td>Optional: path to clustal omega source file</td>
+<td>dms2dfe_dependencies/clustalo-1.2.2-Ubuntu-x86_64</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><th class="stub">msms_fh</th>
+<td>Optional: path to MSMS source file (for calculation of residue depths)</td>
+<td>dms2dfe_dependencies/msms/msms.x86_64Linux2.2.6.1</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">rate4site_fh</th>
+<td>Optional: path to rate4site source file (for calculation of conservation scores)</td>
+<td>dms2dfe_dependencies/rate4site/rate4site-3.0.0/src/rate4site/rate4site</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id45">
+<caption><span class="caption-text"><cite>APH2_Melnikov_et_al_2014/cfg/lbls</cite></span><a class="headerlink" href="#id45" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">varname</th>
+<th class="head">fhs_1</th>
+<th class="head">fhs_2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">KKA2_Bkg1_from_seq_data</th>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292901_1.fastq</td>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292901_2.fastq</td>
+</tr>
+<tr class="row-odd"><th class="stub">KKA2_S1_Kan14_L1_from_seq_data</th>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292881_1.fastq</td>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292881_2.fastq</td>
+</tr>
+<tr class="row-even"><th class="stub">KKA2_S1_Kan11_L1_from_seq_data</th>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292709_1.fastq</td>
+<td>APH2_Melnikov_et_al_2014/data_input/SRR1292709_2.fastq</td>
+</tr>
+<tr class="row-odd"><th class="stub">KKA2_Bkg1</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">KKA2_S1_Kan14_L1</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id46">
+<caption><span class="caption-text"><cite>APH2_Melnikov_et_al_2014/cfg/fit</cite></span><a class="headerlink" href="#id46" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">unsel</th>
+<th class="head">sel_1</th>
+<th class="head">sel_2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">KKA2_Bkg1_from_seq_data</th>
+<td>KKA2_S1_Kan14_L1_from_seq_data</td>
+<td>KKA2_S1_Kan11_L1_from_seq_data</td>
+</tr>
+<tr class="row-odd"><th class="stub">KKA2_Bkg1</th>
+<td>KKA2_S1_Kan14_L1</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id47">
+<caption><span class="caption-text"><cite>APH2_Melnikov_et_al_2014/cfg/feats</cite></span><a class="headerlink" href="#id47" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">aasi</th>
+<th class="head">Conservation score (ConSurf)</th>
+<th class="head">Solvent accessibility (PopMusic)</th>
+<th class="head">Average $DeltaDelta G$ per sequence position (PopMusic)</th>
+<th class="head">Sum of negative contributors (PopMusic)</th>
+<th class="head">Sum of positive contributors (PopMusic)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">10</th>
+<td>2.154</td>
+<td>100</td>
+<td>0.5</td>
+<td>0</td>
+<td>9.59</td>
+</tr>
+<tr class="row-odd"><th class="stub">11</th>
+<td>0.054</td>
+<td>36.96</td>
+<td>0.37</td>
+<td>-0.15</td>
+<td>7.19</td>
+</tr>
+<tr class="row-even"><th class="stub">12</th>
+<td>-1.208</td>
+<td>0</td>
+<td>2.44</td>
+<td>0</td>
+<td>46.4</td>
+</tr>
+<tr class="row-odd"><th class="stub">13</th>
+<td>2.853</td>
+<td>58.48</td>
+<td>0.51</td>
+<td>-0.43</td>
+<td>10.15</td>
+</tr>
+<tr class="row-even"><th class="stub">14</th>
+<td>0.876</td>
+<td>62.3</td>
+<td>0.29</td>
+<td>-0.33</td>
+<td>5.81</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="citations">
+<h3>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h3>
+<table class="docutils citation" frame="void" id="melnikov" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Melnikov]</td><td>Melnikov, A., P. Rogov, L. Wang, A. Gnirke, and T.S. Mikkelsen. 2014. Comprehensive mutational scanning of a kinase in vivo reveals substrate-dependent fitness landscapes. Nucleic Acids Research. 42: 1–8.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="firnberg" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Firnberg]</td><td>Firnberg, E., J.W. Labonte, J.J. Gray, and M. Ostermeier. 2014. A comprehensive, high-resolution map of a Gene’s fitness landscape. Molecular Biology and Evolution. 31: 1581–1592.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/6test.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, Rohan Dandage.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
